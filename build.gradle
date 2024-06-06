@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+subprojects {
+    group = 'com.cowaine'
+    version = '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    dependencies {
+        testCompileOnly platform('org.junit:junit-bom:5.9.1')
+        testCompileOnly 'org.junit.jupiter:junit-jupiter'
+        testImplementation 'org.projectlombok:lombok:1.18.32'
+        annotationProcessor 'org.projectlombok:lombok:1.18.32'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
