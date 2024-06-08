@@ -1,9 +1,12 @@
 package com.cowaine.corock.chapter01.game;
 
+import lombok.Getter;
+
+@Getter
 public class Member {
 
-    int hitPoint;
-    int magicPoint;
+    private int hitPoint;
+    private int magicPoint;
 
     public boolean canAct() {
         return false;

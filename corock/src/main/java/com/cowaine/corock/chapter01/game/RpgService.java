@@ -4,12 +4,12 @@ public class RpgService {
 
     public void cast(Member member, Magic magic) {
         // 살아 있는지 판정
-        if (0 < member.hitPoint) {
+        if (0 < member.getHitPoint()) {
             // 움직일 수 있는지 판정
             if (member.canAct()) {
                 // 매직 포인트에 여유가 있는지 판정
-                if (magic.costMagicPoint <= member.magicPoint) {
-                    member.consumeMagicPoint(magic.costMagicPoint);
+                if (magic.getCostMagicPoint() <= member.getMagicPoint()) {
+                    member.consumeMagicPoint(magic.getCostMagicPoint());
                     member.chant(magic);
                 }
             }
