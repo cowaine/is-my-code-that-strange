@@ -12,9 +12,10 @@ public class Book {
     public static void main(String[] args) {
         // Book.p4();
 
-        ContractAmount amount = new ContractAmount();
-        amount.salesTaxRate = new BigDecimal("-0.1");
-        System.out.println(amount.salesTaxRate.toString());
+        int amountIncludingTax = 0;
+        BigDecimal salesTaxRate = new BigDecimal("-0.1");
+        ContractAmount amount = new ContractAmount(amountIncludingTax, salesTaxRate);
+        System.out.println(amount.getSalesTaxRate());
     }
 
     private static void p4() {
