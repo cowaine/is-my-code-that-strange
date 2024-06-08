@@ -1,6 +1,8 @@
 package com.cowaine.corock;
 
 class MemoryStateManager {
+    private int intValue01;
+
     void changeIntValue01(int changeValue) {
         intValue01 -= changeValue;
         if (intValue01 < 0) {
@@ -8,5 +10,8 @@ class MemoryStateManager {
             updateState02Flag();
         }
     }
-    ...
+
+    private void updateState02Flag() {
+        // (...)
+    }
 }
