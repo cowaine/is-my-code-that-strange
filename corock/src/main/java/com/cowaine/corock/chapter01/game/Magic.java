@@ -1,10 +1,12 @@
 package com.cowaine.corock.chapter01.game;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
+@Getter
 public class Magic {
 
-    @Getter
-    private int costMagicPoint;
+    private final int costMagicPoint;
 
 }
