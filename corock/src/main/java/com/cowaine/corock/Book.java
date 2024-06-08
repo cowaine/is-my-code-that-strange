@@ -5,12 +5,15 @@ import com.cowaine.corock.chapter01.game.Magic;
 import com.cowaine.corock.chapter01.game.Member;
 import com.cowaine.corock.chapter01.game.RpgService;
 
+import java.math.BigDecimal;
+
 public class Book {
 
     public static void main(String[] args) {
         // Book.p4();
 
         ContractAmount amount = new ContractAmount();
+        amount.salesTaxRate = new BigDecimal("-0.1");
         System.out.println(amount.salesTaxRate.toString());
     }
 
