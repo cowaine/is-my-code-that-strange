@@ -1,4 +1,4 @@
-package com.cowaine.corock;
+package com.cowaine.corock.chapter01;
 
 class MemoryStateManager {
     private int intValue01;

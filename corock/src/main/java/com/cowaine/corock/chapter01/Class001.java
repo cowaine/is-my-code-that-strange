@@ -1,4 +1,4 @@
-package com.cowaine.corock;
+package com.cowaine.corock.chapter01;
 
 interface Class001 {
     void method001();
