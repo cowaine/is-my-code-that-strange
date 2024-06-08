@@ -4,9 +4,11 @@ import com.cowaine.corock.chapter01.contract.ContractAmount;
 import com.cowaine.corock.chapter01.game.Magic;
 import com.cowaine.corock.chapter01.game.Member;
 import com.cowaine.corock.chapter01.game.RpgService;
+import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigDecimal;
 
+@Slf4j
 public class Book {
 
     public static void main(String[] args) {
@@ -15,7 +17,7 @@ public class Book {
         int amountIncludingTax = 0;
         BigDecimal salesTaxRate = new BigDecimal("-0.1");
         ContractAmount amount = new ContractAmount(amountIncludingTax, salesTaxRate);
-        System.out.println(amount.getSalesTaxRate());
+        log.info("salesTaxRate: {}", amount.getSalesTaxRate());
     }
 
     private static void p4() {
