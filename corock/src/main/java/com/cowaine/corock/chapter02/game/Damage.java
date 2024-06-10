@@ -1,6 +1,6 @@
 package com.cowaine.corock.chapter02.game;
 
-public class Mystery {
+public class Damage {
 
     public void calc(int p1, int p2, int d1, int d2) {
         int d = 0;
