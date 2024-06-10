@@ -2,12 +2,13 @@ package com.cowaine.corock.chapter02.game;
 
 public class Damage {
 
-    public void calc(int p1, int p2, int d1, int d2) {
-        int d = 0;
-        d = p1 + p2;
-        d = d - ((d1 + d2) / 2);
-        if (d < 0) {
-            d = 0;
+    public void calculate(int playerArmPower, int playerWeaponPower, int enemyBodyDefense, int enemyArmorDefense) {
+        int damageAmount = 0;
+        damageAmount = playerArmPower + playerWeaponPower;
+        damageAmount = damageAmount - ((enemyBodyDefense + enemyArmorDefense) / 2);
+
+        if (damageAmount < 0) {
+            damageAmount = 0;
         }
     }
 

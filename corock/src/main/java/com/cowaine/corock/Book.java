@@ -17,7 +17,7 @@ public class Book {
         // Book.p10();
 
         Damage damage = new Damage();
-        damage.calc(40, 30, 20, 10);
+        damage.calculate(40, 30, 20, 10);
     }
 
     private static void p4() {
