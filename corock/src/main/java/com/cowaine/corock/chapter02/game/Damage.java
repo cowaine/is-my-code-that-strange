@@ -2,6 +2,13 @@ package com.cowaine.corock.chapter02.game;
 
 public class Damage {
 
+    public int calculate(int playerArmPower, int playerWeaponPower, int enemyBodyDefense, int enemyArmorDefense) {
+        int totalPlayerAttackPower = this.sumUpPlayerAttackPower(playerArmPower, playerWeaponPower);
+        int totalEnemyDefense = this.sumUpEnemyDefense(enemyBodyDefense, enemyArmorDefense);
+
+        return this.estimateDamage(totalPlayerAttackPower, totalEnemyDefense);
+    }
+
     // 플레이어의 공격력 합계 계산
     private int sumUpPlayerAttackPower(int playerArmPower, int playerWeaponPower) {
         return playerArmPower + playerWeaponPower;
@@ -18,14 +25,6 @@ public class Damage {
         if (damageAmount < 0) {
             damageAmount = 0;
         }
-
-        return damageAmount;
-    }
-
-    public int calculate(int playerArmPower, int playerWeaponPower, int enemyBodyDefense, int enemyArmorDefense) {
-        int totalPlayerAttackPower = sumUpPlayerAttackPower(playerArmPower, playerWeaponPower);
-        int totalEnemyDefense = sumUpEnemyDefense(enemyBodyDefense, enemyArmorDefense);
-        int damageAmount = estimateDamage(totalPlayerAttackPower, totalEnemyDefense);
 
         return damageAmount;
     }
