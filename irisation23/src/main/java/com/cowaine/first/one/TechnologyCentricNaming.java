@@ -1,4 +1,4 @@
-package com.cowaine.first;
+package com.cowaine.first.one;
 
 public class TechnologyCentricNaming {
 }
