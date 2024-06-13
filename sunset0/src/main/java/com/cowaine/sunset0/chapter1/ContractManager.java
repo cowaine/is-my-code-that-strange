@@ -29,8 +29,9 @@ public class ContractManager {
     public static void main(String[] args) {
         //쓰레기 객체
         ContractAmount amount = new ContractAmount();
+
         //BigDecimal은 따로 초기화하지 않으면 null이 들어간다.
-        System.out.println(amount.salesTaxRate.toString());
+//        System.out.println(amount.salesTaxRate.toString());
 
         //잘못된 값이 들어가는 경우
         amount.salesTaxRate = new BigDecimal("-0.1");
