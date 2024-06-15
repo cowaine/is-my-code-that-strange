@@ -14,11 +14,11 @@ public class Main {
     void chapter03() {
         Money money = new Money(100, Currency.getInstance(Locale.KOREA));
         int originalPrice = 1000;
-        money.amount = originalPrice;
         boolean specialServiceAdded = false;
         int additionalServiceFee = 0;
 
-        if(specialServiceAdded) {
+        Money addedMoney = money.add(originalPrice);
+        if (specialServiceAdded) {
             money.add(additionalServiceFee);
         }
     }
