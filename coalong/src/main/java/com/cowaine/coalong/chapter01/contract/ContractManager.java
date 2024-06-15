@@ -1,4 +1,4 @@
-package com.cowaine.coalong.chapter01;
+package com.cowaine.coalong.chapter01.contract;
 
 import java.math.BigDecimal;
 

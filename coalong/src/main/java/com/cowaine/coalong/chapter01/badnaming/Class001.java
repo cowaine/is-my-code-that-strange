@@ -1,4 +1,4 @@
-package com.cowaine.coalong.chapter01;
+package com.cowaine.coalong.chapter01.badnaming;
 
 public class Class001 {
     void method001() {}
