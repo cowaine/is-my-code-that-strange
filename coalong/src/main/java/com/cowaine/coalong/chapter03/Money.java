@@ -6,7 +6,7 @@ public class Money {
     public final int amount;         // 금액
     public final Currency currency;  // 통화 단위
 
-    public Money(int amount, Currency currency) {
+    public Money(final  int amount, final Currency currency) {
         if (amount < 0) {
             throw new IllegalArgumentException("amount must be positive");
         }
@@ -20,7 +20,11 @@ public class Money {
     }
 
     public Money add(final Money other) {
-        int added = amount + other.amount;
+        if (!currency.equals(other.currency)) {
+            throw new IllegalArgumentException("currency does not match");
+        }
+
+        final int added = amount + other.amount;
         return new Money(added, currency);
     }
 }
