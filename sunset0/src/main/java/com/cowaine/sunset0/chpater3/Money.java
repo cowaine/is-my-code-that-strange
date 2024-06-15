@@ -1,6 +1,8 @@
 package com.cowaine.sunset0.chpater3;
 
 
+import java.util.Currency;
+
 public class Money {
     final int amount;
     final Currency currency;
