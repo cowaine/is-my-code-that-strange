@@ -19,8 +19,8 @@ public class Money {
         this.currency = currency;
     }
 
-    public Money add(int other) {
-        int added = amount + other;
+    public Money add(final Money other) {
+        int added = amount + other.amount;
         return new Money(added, currency);
     }
 }
