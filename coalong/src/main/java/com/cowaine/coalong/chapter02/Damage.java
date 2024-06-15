@@ -2,10 +2,11 @@ package com.cowaine.coalong.chapter02;
 
 public class Damage {
 
-    void calcDamage(int playerArmPower, int playerWeaponPower, int enemyBodyDefence, int enemyArmorDefence) {
+    // 데미지를 계산
+    int calcDamage(int playerArmPower, int playerWeaponPower, int enemyBodyDefence, int enemyArmorDefence) {
         int totalPlayerAttackPower = sumUpPlayerAttackPower(playerArmPower, playerWeaponPower);
         int totalEnemyDefence = sumUpEnemyDefence(enemyBodyDefence, enemyArmorDefence);
-        int damageAmount = estimateDamage(totalPlayerAttackPower, totalEnemyDefence);
+        return estimateDamage(totalPlayerAttackPower, totalEnemyDefence);
     }
 
     // 데미지 평가
