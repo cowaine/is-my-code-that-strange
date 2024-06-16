@@ -17,9 +17,7 @@ public class Book {
         // Book.p4();
         // Book.p10();
         // Book.pp14To17();
-
-        Game game = new Game();
-        game.play(70, 50);
+        // Book.p18();
     }
 
     private static void p4() {
@@ -40,6 +38,11 @@ public class Book {
     private static void pp14To17() {
         Damage damage = new Damage();
         log.info("damage: {}", damage.calculate(40, 30, 20, 10));
+    }
+
+    private static void p18() {
+        Game game = new Game();
+        game.play(70, 50);
     }
 
 }
