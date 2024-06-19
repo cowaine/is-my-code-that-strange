@@ -32,4 +32,15 @@ public class Money {
         return new Money(added, currency);
     }
 
+    // 금액을 곱하는 일은 일반적인 회계 서비스에서 있을 수 없음
+    // public Money multiply(final Money other) {
+    //     if (!currency.equals(other.currency)) {
+    //         throw new IllegalArgumentException("통화 단위가 다릅니다.");
+    //     }
+    //
+    //     final int multiplied = amount * other.amount;
+    //
+    //     return new Money(multiplied, currency);
+    // }
+
 }

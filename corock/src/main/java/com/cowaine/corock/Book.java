@@ -27,16 +27,7 @@ public class Book {
         // Book.p18();
         // Book.p19();
         // Book.pp26To31();
-
-        Currency currency = Currency.getInstance(Locale.KOREA);
-        Money money = new Money(1_000, currency);
-
-        // 티켓의 수
-        final int ticketCount = 3;
-        Money addedMoney = IntStream.range(0, ticketCount)
-                .mapToObj(v -> new Money(12_000, currency))
-                .reduce(money, Money::add);
-        log.info("Added money: {}", addedMoney.getAmount());
+        // Book.pp32To33();
     }
 
     private static void p4() {
@@ -104,6 +95,18 @@ public class Book {
 
     private static Money seasonPrice() {
         return new Money(19_800, Currency.getInstance(Locale.KOREA));
+    }
+
+    private static void pp32To33() {
+        Currency currency = Currency.getInstance(Locale.KOREA);
+        Money money = new Money(1_000, currency);
+
+        // 티켓의 수
+        final int ticketCount = 3;
+        Money addedMoney = IntStream.range(0, ticketCount)
+                .mapToObj(v -> new Money(12_000, currency))
+                .reduce(money, Money::add);
+        log.info("Added money: {}", addedMoney.getAmount());
     }
 
 }
