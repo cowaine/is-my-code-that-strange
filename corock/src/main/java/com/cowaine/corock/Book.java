@@ -25,30 +25,14 @@ public class Book {
         // Book.pp14To17();
         // Book.p18();
         // Book.p19();
+        // Book.pp26To31();
 
-        Money money = new Money(100, Currency.getInstance(Locale.KOREA));
-        log.info("The amount of money is {}, the currency is {}", money.getAmount(), money.getCurrency());
+        Money money = new Money(1_000, Currency.getInstance(Locale.KOREA));
 
-        SecureRandom secureRandom = SecureRandom.getInstanceStrong();
-        boolean specialServiceAdded = secureRandom.nextBoolean();
-        int additionalServiceFee = 9_900;
-
-        money = money.add(39_800);
-
-        // (...)
-
-        if (specialServiceAdded) {
-            money = money.add(additionalServiceFee);
-
-            // (...)
-
-            boolean seasonOffApplied = secureRandom.nextBoolean();
-            if (seasonOffApplied) {
-                money = money.add(seasonPrice());
-            }
-        }
-
-        log.info("The amount of changed money is {}, the currency is {}", money.getAmount(), money.getCurrency());
+        // 티켓의 수
+        final int ticketCount = 3;
+        Money addedMoney = money.add(ticketCount);
+        log.info("Added money: {}", addedMoney.getAmount());
     }
 
     private static void p4() {
@@ -85,6 +69,32 @@ public class Book {
 
         HitPoint recoveredHitPoint = damagedHitPoint.recover(50);
         log.info("Player's HP after using a health potion: {}", recoveredHitPoint.getValue());
+    }
+
+    private static void pp26To31() throws NoSuchAlgorithmException {
+        Money money = new Money(100, Currency.getInstance(Locale.KOREA));
+        log.info("The amount of money is {}, the currency is {}", money.getAmount(), money.getCurrency());
+
+        SecureRandom secureRandom = SecureRandom.getInstanceStrong();
+        boolean specialServiceAdded = secureRandom.nextBoolean();
+        int additionalServiceFee = 9_900;
+
+        money = money.add(39_800);
+
+        // (...)
+
+        if (specialServiceAdded) {
+            money = money.add(additionalServiceFee);
+
+            // (...)
+
+            boolean seasonOffApplied = secureRandom.nextBoolean();
+            if (seasonOffApplied) {
+                money = money.add(seasonPrice());
+            }
+        }
+
+        log.info("The amount of changed money is {}, the currency is {}", money.getAmount(), money.getCurrency());
     }
 
     private static int seasonPrice() {
