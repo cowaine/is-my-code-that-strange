@@ -7,8 +7,8 @@ import java.util.Currency;
 @Getter
 public class Money {
 
-    public int amount;
-    private Currency currency;
+    private final int amount;
+    private final Currency currency;
 
     public Money(int amount, Currency currency) {
         if (amount < 0) {
@@ -23,8 +23,9 @@ public class Money {
         this.currency = currency;
     }
 
-    public void add(int other) {
-        this.amount += other;
+    public Money add(int other) {
+        int added = amount + other;
+        return new Money(added, currency);
     }
 
 }

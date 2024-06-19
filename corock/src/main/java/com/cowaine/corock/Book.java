@@ -33,18 +33,18 @@ public class Book {
         boolean specialServiceAdded = secureRandom.nextBoolean();
         int additionalServiceFee = 9_900;
 
-        money.amount = 39_800;
+        money = money.add(39_800);
 
         // (...)
 
         if (specialServiceAdded) {
-            money.add(additionalServiceFee);
+            money = money.add(additionalServiceFee);
 
             // (...)
 
             boolean seasonOffApplied = secureRandom.nextBoolean();
             if (seasonOffApplied) {
-                money.amount = seasonPrice();
+                money = money.add(seasonPrice());
             }
         }
 
