@@ -23,4 +23,8 @@ public class Money {
         this.currency = currency;
     }
 
+    public void add(int other) {
+        this.amount += other;
+    }
+
 }
