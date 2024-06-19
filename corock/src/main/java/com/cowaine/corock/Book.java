@@ -15,11 +15,12 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Currency;
 import java.util.Locale;
+import java.util.stream.IntStream;
 
 @Slf4j
 public class Book {
 
-    public static void main(String[] args) throws NoSuchAlgorithmException {
+    public static void main(String[] args) {
         // Book.p4();
         // Book.p10();
         // Book.pp14To17();
@@ -27,11 +28,14 @@ public class Book {
         // Book.p19();
         // Book.pp26To31();
 
-        Money money = new Money(1_000, Currency.getInstance(Locale.KOREA));
+        Currency currency = Currency.getInstance(Locale.KOREA);
+        Money money = new Money(1_000, currency);
 
         // 티켓의 수
         final int ticketCount = 3;
-        Money addedMoney = money.add(ticketCount);
+        Money addedMoney = IntStream.range(0, ticketCount)
+                .mapToObj(v -> new Money(12_000, currency))
+                .reduce(money, Money::add);
         log.info("Added money: {}", addedMoney.getAmount());
     }
 
@@ -72,19 +76,20 @@ public class Book {
     }
 
     private static void pp26To31() throws NoSuchAlgorithmException {
-        Money money = new Money(100, Currency.getInstance(Locale.KOREA));
+        Currency currency = Currency.getInstance(Locale.KOREA);
+        Money money = new Money(100, currency);
         log.info("The amount of money is {}, the currency is {}", money.getAmount(), money.getCurrency());
 
         SecureRandom secureRandom = SecureRandom.getInstanceStrong();
         boolean specialServiceAdded = secureRandom.nextBoolean();
         int additionalServiceFee = 9_900;
 
-        money = money.add(39_800);
+        money = money.add(new Money(39_800, currency));
 
         // (...)
 
         if (specialServiceAdded) {
-            money = money.add(additionalServiceFee);
+            money = money.add(new Money(additionalServiceFee, currency));
 
             // (...)
 
@@ -97,8 +102,8 @@ public class Book {
         log.info("The amount of changed money is {}, the currency is {}", money.getAmount(), money.getCurrency());
     }
 
-    private static int seasonPrice() {
-        return 19_800;
+    private static Money seasonPrice() {
+        return new Money(19_800, Currency.getInstance(Locale.KOREA));
     }
 
 }

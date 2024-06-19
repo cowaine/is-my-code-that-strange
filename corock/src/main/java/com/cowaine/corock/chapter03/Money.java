@@ -23,8 +23,12 @@ public class Money {
         this.currency = currency;
     }
 
-    public Money add(final int other) {
-        final int added = amount + other;
+    public Money add(final Money other) {
+        if (!currency.equals(other.currency)) {
+            throw new IllegalArgumentException("통화 단위가 다릅니다.");
+        }
+
+        final int added = amount + other.amount;
         return new Money(added, currency);
     }
 
