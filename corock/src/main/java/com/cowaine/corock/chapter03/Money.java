@@ -7,8 +7,8 @@ import java.util.Currency;
 @Getter
 public class Money {
 
-    private int amount;             // 금액
-    private Currency currency;      // 통화 단위
+    public int amount;
+    private Currency currency;
 
     public Money(int amount, Currency currency) {
         if (amount < 0) {

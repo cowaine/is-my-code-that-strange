@@ -11,19 +11,44 @@ import com.cowaine.corock.chapter03.Money;
 import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigDecimal;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.util.Currency;
+import java.util.Locale;
 
 @Slf4j
 public class Book {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchAlgorithmException {
         // Book.p4();
         // Book.p10();
         // Book.pp14To17();
         // Book.p18();
         // Book.p19();
 
-        Money money = new Money(-100, null);
-        log.info("The amount of money is {}, currency is {}", money.getAmount(), money.getCurrency());
+        Money money = new Money(100, Currency.getInstance(Locale.KOREA));
+        log.info("The amount of money is {}, the currency is {}", money.getAmount(), money.getCurrency());
+
+        SecureRandom secureRandom = SecureRandom.getInstanceStrong();
+        boolean specialServiceAdded = secureRandom.nextBoolean();
+        int additionalServiceFee = 9_900;
+
+        money.amount = 39_800;
+
+        // (...)
+
+        if (specialServiceAdded) {
+            money.add(additionalServiceFee);
+
+            // (...)
+
+            boolean seasonOffApplied = secureRandom.nextBoolean();
+            if (seasonOffApplied) {
+                money.amount = seasonPrice();
+            }
+        }
+
+        log.info("The amount of changed money is {}, the currency is {}", money.getAmount(), money.getCurrency());
     }
 
     private static void p4() {
@@ -60,6 +85,10 @@ public class Book {
 
         HitPoint recoveredHitPoint = damagedHitPoint.recover(50);
         log.info("Player's HP after using a health potion: {}", recoveredHitPoint.getValue());
+    }
+
+    private static int seasonPrice() {
+        return 19_800;
     }
 
 }
