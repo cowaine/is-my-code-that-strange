@@ -12,16 +12,17 @@ public class AttackGame {
         Weapon weaponA = new Weapon(attackPowerA);
         Weapon weaponB = new Weapon(attackPowerB);
 
-        weaponA.attackPower.value += 5;
+        final AttackPower increment = new AttackPower(5);
+        final Weapon reinforcedWeaponA = weaponA.reinforce(increment);
 
-        System.out.println("Weapon A attack power : " + weaponA.attackPower.value);
+        System.out.println("Weapon A attack power : " + reinforcedWeaponA.attackPower.value);
         System.out.println("Weapon B attack power : " + weaponB.attackPower.value);
     }
 
     static void action() {
-        AttackPower attackPower = new AttackPower(20);
+        final AttackPower attackPower = new AttackPower(20);
 
-        attackPower.reinforce(15);
-        System.out.println("attack power : " + attackPower.value);
+        final AttackPower reinforced = attackPower.reinforce(new AttackPower(15));
+        System.out.println("attack power : " + reinforced.value);
     }
 }
