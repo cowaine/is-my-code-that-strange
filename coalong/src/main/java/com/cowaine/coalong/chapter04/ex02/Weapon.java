@@ -6,4 +6,14 @@ public class Weapon {
     Weapon(AttackPower attackPower) {
         this.attackPower = attackPower;
     }
+
+    /**
+     * 무기 강화하기
+     * @param increment 공격력 강화
+     * @return 강화된 무기
+     */
+    Weapon reinforce(final AttackPower increment) {
+        final AttackPower reinforced = attackPower.reinforce(increment);
+        return new Weapon(reinforced);
+    }
 }

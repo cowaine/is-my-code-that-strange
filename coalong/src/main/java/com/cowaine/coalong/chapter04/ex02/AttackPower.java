@@ -2,7 +2,7 @@ package com.cowaine.coalong.chapter04.ex02;
 
 public class AttackPower {
     static final int MIN = 0;
-    int value; // final 을 붙이지 않았으므로 가변
+    final int value; // final 로 불변으로 만들었습니다.
 
     AttackPower(int value) {
         if (value < MIN) {
@@ -15,15 +15,16 @@ public class AttackPower {
     /**
      * 공격력 강화하기
      * @param increment 공격력 증가량
+     * @return 증가된 공격력
      */
-    void reinforce(int increment) {
-        value += increment;
+    AttackPower reinforce(final AttackPower increment) {
+        return new AttackPower(this.value + increment.value);
     }
 
     /**
      * 무력화하기
      */
-    void disable() {
-        value = MIN;
+    AttackPower disable() {
+        return new AttackPower(MIN);
     }
 }
