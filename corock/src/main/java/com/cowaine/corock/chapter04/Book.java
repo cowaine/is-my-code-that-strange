@@ -15,12 +15,13 @@ public class Book {
         // Book.pp42To43();
         // Book.p44();
 
-        AttackPower attackPower = new AttackPower(20);
+        AttackPower attackPowerA = new AttackPower(20);
+        AttackPower attackPowerB = new AttackPower(20);
 
-        Weapon weaponA = new Weapon(attackPower);
-        Weapon weaponB = new Weapon(attackPower);
+        Weapon weaponA = new Weapon(attackPowerA);
+        Weapon weaponB = new Weapon(attackPowerB);
 
-        weaponA.attackPower.value = 25;
+        weaponA.attackPower.value += 5;
 
         log.info("Weapon A attack power: {}", weaponA.attackPower.value);
         log.info("Weapon B attack power: {}", weaponB.attackPower.value);
