@@ -15,4 +15,20 @@ public class AttackPower {
         this.value = value;
     }
 
+    /**
+     * 공격력을 강화한다.
+     *
+     * @param increment 공격력 증가량
+     */
+    public void reinforce(int increment) {
+        this.value += increment;
+    }
+
+    /**
+     * 공격력을 무력화한다.
+     */
+    public void disable() {
+        this.value = MIN;
+    }
+
 }
