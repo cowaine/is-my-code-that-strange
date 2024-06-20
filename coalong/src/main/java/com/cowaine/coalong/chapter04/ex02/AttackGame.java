@@ -5,12 +5,13 @@ public class AttackGame {
         Attack();
     }
     static void Attack() {
-        AttackPower attackPower = new AttackPower(20);
+        AttackPower attackPowerA = new AttackPower(20);
+        AttackPower attackPowerB = new AttackPower(20);
 
-        Weapon weaponA = new Weapon(attackPower);
-        Weapon weaponB = new Weapon(attackPower);
+        Weapon weaponA = new Weapon(attackPowerA);
+        Weapon weaponB = new Weapon(attackPowerB);
 
-        weaponA.attackPower.value = 25;
+        weaponA.attackPower.value += 5;
 
         System.out.println("Weapon A attack power : " + weaponA.attackPower.value);
         System.out.println("Weapon B attack power : " + weaponB.attackPower.value);
