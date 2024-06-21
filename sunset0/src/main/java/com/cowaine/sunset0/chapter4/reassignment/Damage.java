@@ -7,7 +7,7 @@ public class Damage {
     // 코드 4.1 변수 tmp에 여러 번 재할당하기
     int damageV1() {
         int tmp = member.power() + member.weaponAttack();
-        tmp = (int) (tmp * (1f + member.spped() / 100f));
+        tmp = (int) (tmp * (1f + member.speed() / 100f));
         tmp = tmp - (int) (enemy.defence / 2);
         tmp = Math.max(0, tmp);
         return tmp;
@@ -23,7 +23,7 @@ public class Damage {
     // 코드 4.3 변수 개별적인 불변 지역 변수를 사용하는 형태로 변경하기
     int damagwV2() {
         final int tmp = member.power() + member.weaponAttack();
-        final int finalAttackPower = (int) (tmp * (1f + member.spped() / 100f));
+        final int finalAttackPower = (int) (tmp * (1f + member.speed() / 100f));
         final int reduction = tmp - (int) (enemy.defence / 2);
         final int damage = Math.max(0, tmp);
         return tmp;
@@ -43,7 +43,7 @@ public class Damage {
             return 100;
         }
 
-        public float spped() {
+        public float speed() {
             return 5;
         }
     }
