@@ -5,10 +5,13 @@ import com.cowaine.corock.chapter04.game.Damage;
 import com.cowaine.corock.chapter04.game.Enemy;
 import com.cowaine.corock.chapter04.game.HitPoint;
 import com.cowaine.corock.chapter04.game.Member;
+import com.cowaine.corock.chapter04.game.StateType;
+import com.cowaine.corock.chapter04.game.States;
 import com.cowaine.corock.chapter04.game.Weapon;
 import com.cowaine.corock.chapter04.product.Product;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -26,7 +29,8 @@ public class Book {
     }
 
     private static void pp42To43() {
-        log.info("damage: {}", new Damage(new Member(new HitPoint(), null), new Enemy(30)).damage());
+        Member member = new Member(new HitPoint(10), new States(List.of(StateType.DEAD)));
+        log.info("damage: {}", new Damage(member, new Enemy(30)).damage());
     }
 
     private static void p44() {

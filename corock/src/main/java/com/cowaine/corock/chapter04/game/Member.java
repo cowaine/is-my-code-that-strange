@@ -25,8 +25,11 @@ public class Member {
      *
      * @param damageAmount 대미지 크기
      */
-    public void damage(int damageAmount) {
-        hitPoint.amount -= damageAmount;
+    public void damage(final int damageAmount) {
+        hitPoint.damage(damageAmount);
+        if (hitPoint.isZero()) {
+            states.add(StateType.DEAD);
+        }
     }
 
 }
