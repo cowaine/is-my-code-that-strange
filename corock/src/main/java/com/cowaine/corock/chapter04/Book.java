@@ -16,28 +16,33 @@ import java.util.concurrent.TimeUnit;
 public class Book {
 
     public static void main(String[] args) {
-        Book.pp45To48();
+        Book.pp42To43();
+        Book.p44();
+        Book.pp45To47();
+        Book.pp47To48();
+        Book.pp49To52();
 
-        AttackPower attackPower = new AttackPower(20);
+        final AttackPower attackPowerA = new AttackPower(20);
+        final AttackPower attackPowerB = new AttackPower(20);
 
-        // (...)
+        final Weapon weaponA = new Weapon(attackPowerA);
+        final Weapon weaponB = new Weapon(attackPowerB);
 
-        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        final AttackPower increment = new AttackPower(5);
+        final Weapon reinforcedWeaponA = weaponA.reinforce(increment);
 
-        final AttackPower reinforced = attackPower.reinforce(new AttackPower(15));
+        log.info("Weapon A attack power: {}", weaponA.attackPower.value);
+        log.info("Reinforced weapon A attack power: {}", reinforcedWeaponA.attackPower.value);
+        log.info("Weapon B attack power: {}", weaponB.attackPower.value);
+    }
 
-        Runnable disableTask = attackPower::disable;
-        executorService.submit(disableTask);
-        executorService.shutdown();
+    private static void pp42To43() {
+        log.info("damage: {}", new Damage(new Member(), new Enemy(30)).damage());
+    }
 
-        try {
-            if (executorService.awaitTermination(3, TimeUnit.SECONDS)) {
-                log.info("Final attack power: {}", reinforced.value);
-            }
-        } catch (InterruptedException e) {
-            log.error("Thread interrupted while waiting for ExecutorService to terminate", e);
-            Thread.currentThread().interrupt();
-        }
+    private static void p44() {
+        Product product = new Product(39_800);
+        log.info("price: {}", product.addPrice(19_800));
     }
 
     private static void pp45To47() {
@@ -53,16 +58,7 @@ public class Book {
         log.info("Weapon B attack power: {}", weaponB.attackPower.value);
     }
 
-    private static void pp42To43() {
-        log.info("damage: {}", new Damage(new Member(), new Enemy(30)).damage());
-    }
-
-    private static void p44() {
-        Product product = new Product(39_800);
-        log.info("price: {}", product.addPrice(19_800));
-    }
-
-    private static void pp45To48() {
+    private static void pp47To48() {
         // Book.pp42To43();
         // Book.p44();
         // Book.pp45To47();
@@ -84,6 +80,29 @@ public class Book {
         try {
             if (executorService.awaitTermination(3, TimeUnit.SECONDS)) {
                 log.info("Final attack power: {}", attackPower.value);
+            }
+        } catch (InterruptedException e) {
+            log.error("Thread interrupted while waiting for ExecutorService to terminate", e);
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    private static void pp49To52() {
+        AttackPower attackPower = new AttackPower(20);
+
+        // (...)
+
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+
+        final AttackPower reinforced = attackPower.reinforce(new AttackPower(15));
+
+        Runnable disableTask = attackPower::disable;
+        executorService.submit(disableTask);
+        executorService.shutdown();
+
+        try {
+            if (executorService.awaitTermination(3, TimeUnit.SECONDS)) {
+                log.info("Final attack power: {}", reinforced.value);
             }
         } catch (InterruptedException e) {
             log.error("Thread interrupted while waiting for ExecutorService to terminate", e);
