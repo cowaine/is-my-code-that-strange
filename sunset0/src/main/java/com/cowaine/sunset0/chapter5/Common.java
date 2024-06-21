@@ -10,4 +10,24 @@ public class Common {
     static BigDecimal calcAmountIncludingTax(BigDecimal amountExcludingTax, BigDecimal taxRate) {
         return amountExcludingTax.multiply(taxRate);
     }
+
+    //사용자가 이미 탈퇴했다면 true
+    static boolean hasResigned(User user) {
+        return true;
+    }
+
+
+    //상품 주문하기
+    static void createOrder(Product product) {
+    }
+
+    static boolean isValidPhoneNumber(String phoneNumber) {
+        return true;
+    }
+
+    public static class Product {
+    }
+
+    public static class User {
+    }
 }
