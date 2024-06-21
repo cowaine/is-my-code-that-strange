@@ -16,9 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class Book {
 
     public static void main(String[] args) {
-        // Book.pp42To43();
-        // Book.p44();
-        // Book.pp45To47();
+        Book.pp45To48();
 
         AttackPower attackPower = new AttackPower(20);
 
@@ -26,17 +24,15 @@ public class Book {
 
         ExecutorService executorService = Executors.newFixedThreadPool(2);
 
-        Runnable reinforceTask = () -> attackPower.reinforce(15);
+        final AttackPower reinforced = attackPower.reinforce(new AttackPower(15));
+
         Runnable disableTask = attackPower::disable;
-
-        executorService.submit(reinforceTask);
         executorService.submit(disableTask);
-
         executorService.shutdown();
 
         try {
             if (executorService.awaitTermination(3, TimeUnit.SECONDS)) {
-                log.info("Final attack power: {}", attackPower.value);
+                log.info("Final attack power: {}", reinforced.value);
             }
         } catch (InterruptedException e) {
             log.error("Thread interrupted while waiting for ExecutorService to terminate", e);
@@ -51,7 +47,7 @@ public class Book {
         Weapon weaponA = new Weapon(attackPowerA);
         Weapon weaponB = new Weapon(attackPowerB);
 
-        weaponA.attackPower.value += 5;
+        // weaponA.attackPower.value += 5;
 
         log.info("Weapon A attack power: {}", weaponA.attackPower.value);
         log.info("Weapon B attack power: {}", weaponB.attackPower.value);
@@ -64,6 +60,35 @@ public class Book {
     private static void p44() {
         Product product = new Product(39_800);
         log.info("price: {}", product.addPrice(19_800));
+    }
+
+    private static void pp45To48() {
+        // Book.pp42To43();
+        // Book.p44();
+        // Book.pp45To47();
+
+        AttackPower attackPower = new AttackPower(20);
+
+        // (...)
+
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+
+        // Runnable reinforceTask = () -> attackPower.reinforce(15);
+        Runnable disableTask = attackPower::disable;
+
+        // executorService.submit(reinforceTask);
+        executorService.submit(disableTask);
+
+        executorService.shutdown();
+
+        try {
+            if (executorService.awaitTermination(3, TimeUnit.SECONDS)) {
+                log.info("Final attack power: {}", attackPower.value);
+            }
+        } catch (InterruptedException e) {
+            log.error("Thread interrupted while waiting for ExecutorService to terminate", e);
+            Thread.currentThread().interrupt();
+        }
     }
 
 }
