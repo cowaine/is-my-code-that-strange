@@ -3,6 +3,7 @@ package com.cowaine.corock.chapter04;
 import com.cowaine.corock.chapter04.game.AttackPower;
 import com.cowaine.corock.chapter04.game.Damage;
 import com.cowaine.corock.chapter04.game.Enemy;
+import com.cowaine.corock.chapter04.game.HitPoint;
 import com.cowaine.corock.chapter04.game.Member;
 import com.cowaine.corock.chapter04.game.Weapon;
 import com.cowaine.corock.chapter04.product.Product;
@@ -21,23 +22,11 @@ public class Book {
         Book.pp45To47();
         Book.pp47To48();
         Book.pp49To52();
-
-        final AttackPower attackPowerA = new AttackPower(20);
-        final AttackPower attackPowerB = new AttackPower(20);
-
-        final Weapon weaponA = new Weapon(attackPowerA);
-        final Weapon weaponB = new Weapon(attackPowerB);
-
-        final AttackPower increment = new AttackPower(5);
-        final Weapon reinforcedWeaponA = weaponA.reinforce(increment);
-
-        log.info("Weapon A attack power: {}", weaponA.attackPower.value);
-        log.info("Reinforced weapon A attack power: {}", reinforcedWeaponA.attackPower.value);
-        log.info("Weapon B attack power: {}", weaponB.attackPower.value);
+        Book.pp52To53();
     }
 
     private static void pp42To43() {
-        log.info("damage: {}", new Damage(new Member(), new Enemy(30)).damage());
+        log.info("damage: {}", new Damage(new Member(new HitPoint(), null), new Enemy(30)).damage());
     }
 
     private static void p44() {
@@ -108,6 +97,21 @@ public class Book {
             log.error("Thread interrupted while waiting for ExecutorService to terminate", e);
             Thread.currentThread().interrupt();
         }
+    }
+
+    private static void pp52To53() {
+        final AttackPower attackPowerA = new AttackPower(20);
+        final AttackPower attackPowerB = new AttackPower(20);
+
+        final Weapon weaponA = new Weapon(attackPowerA);
+        final Weapon weaponB = new Weapon(attackPowerB);
+
+        final AttackPower increment = new AttackPower(5);
+        final Weapon reinforcedWeaponA = weaponA.reinforce(increment);
+
+        log.info("Weapon A attack power: {}", weaponA.attackPower.value);
+        log.info("Reinforced weapon A attack power: {}", reinforcedWeaponA.attackPower.value);
+        log.info("Weapon B attack power: {}", weaponB.attackPower.value);
     }
 
 }
