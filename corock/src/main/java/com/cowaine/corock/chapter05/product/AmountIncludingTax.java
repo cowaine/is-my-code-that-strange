@@ -4,10 +4,10 @@ import java.math.BigDecimal;
 
 public class AmountIncludingTax {
 
-    final BigDecimal value;
+    private final BigDecimal value;
 
     public AmountIncludingTax(final AmountIncludingTax amountIncludingTax, final TaxRate taxRate) {
-        value = amountIncludingTax.value.multiply(taxRate.value);
+        this.value = amountIncludingTax.value.multiply(taxRate.getValue());
     }
 
 }

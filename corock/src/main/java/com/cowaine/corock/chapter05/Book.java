@@ -11,19 +11,7 @@ public class Book {
     public static void main(String[] args) {
         // Book.pp60To62();
         // Book.p62();
-
-        // 표준 회원 가입 포인트
-        // GiftPoint standardMembershipPoint = new GiftPoint(3_000);
-        GiftPoint standardMembershipPoint = GiftPoint.forStandardMembership();
-
-        // (...)
-
-        // GiftPoint premiumMembershipPoint = new GiftPoint(10_000);
-        GiftPoint premiumMembershipPoint = GiftPoint.forPremiumMembership();
-
-        // (...)
-
-        log.info("표준 회원 가입 포인트: {}, 프리미엄 회원 가입 포인트: {}", standardMembershipPoint, premiumMembershipPoint);
+        // Book.pp64To67();
     }
 
     private static void pp60To62() {
@@ -40,6 +28,21 @@ public class Book {
         PaymentManager paymentManager = new PaymentManager();
         int addedAmount = paymentManager.add(moneyData1.getAmount(), moneyData2.getAmount());
         log.info("amount: {}, discountRate: {}", addedAmount, paymentManager.getDiscountRate());
+    }
+
+    private static void pp64To67() {
+        // 표준 회원 가입 포인트
+        // GiftPoint standardMembershipPoint = new GiftPoint(3_000);
+        GiftPoint standardMembershipPoint = GiftPoint.forStandardMembership();
+
+        // (...)
+
+        // GiftPoint premiumMembershipPoint = new GiftPoint(10_000);
+        GiftPoint premiumMembershipPoint = GiftPoint.forPremiumMembership();
+
+        // (...)
+
+        log.info("표준 회원 가입 포인트: {}, 프리미엄 회원 가입 포인트: {}", standardMembershipPoint, premiumMembershipPoint);
     }
 
 }
