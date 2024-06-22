@@ -52,4 +52,23 @@ public class Common {
         return false;
     }
 
+    /**
+     * 할인율을 반영한 할인가를 반환한다.
+     *
+     * @param regularPrice 정가
+     * @param discountRate 할인율
+     * @return 할인가
+     */
+    int discountedPrice(int regularPrice, float discountRate) {
+        if (regularPrice < 0) {
+            throw new IllegalArgumentException();
+        }
+
+        if (discountRate < 0.0f) {
+            throw new IllegalArgumentException();
+        }
+
+        return (int) (regularPrice * discountRate);
+    }
+
 }
