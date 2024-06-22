@@ -1,5 +1,7 @@
 package com.cowaine.corock.chapter05;
 
+import com.cowaine.corock.chapter05.domain.DiscountManager;
+import com.cowaine.corock.chapter05.domain.MoneyData;
 import com.cowaine.corock.chapter05.order.Money;
 import com.cowaine.corock.chapter05.payment.PaymentManager;
 import com.cowaine.corock.chapter05.point.GiftPoint;
@@ -12,6 +14,12 @@ public class Book {
         // Book.pp60To62();
         // Book.p62();
         // Book.pp64To67();
+
+        DiscountManager discountManager = new DiscountManager();
+        MoneyData money = new MoneyData(1_000);
+
+        discountManager.set(money);
+        log.info("money: {}", money.getAmount());
     }
 
     private static void pp60To62() {
