@@ -4,6 +4,12 @@ public class Main05 {
     public static void main(String[] args) {
         page61();
         page65();
+        page67();
+    }
+
+    private static void page67() {
+        GiftPoint standMembershipPoint = GiftPoint.forPremiumMembership();
+        GiftPoint premiumMembershipPoint = GiftPoint.forPremiumMembership();
     }
 
     private static void page65() {
