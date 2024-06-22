@@ -2,6 +2,8 @@ package com.cowaine.snoopingh.chap03;
 
 import java.util.Currency;
 
+// 데이터와 로직은 같은 클래스에 있으면 응집도가 높아짐!
+// 응집도가 낮은 구조는 중복을 발생시킨다.
 public class Money {
     final int amount; // 인스턴스를 불변으로 만들어서 예상치 못한 동작 막기
     final Currency currency;
@@ -43,4 +45,15 @@ public class Money {
         final int added = amount + other.amount;
         return new Money(added, currency);
     }
+
+    // 익명함수에서는 변수 재할당이 불가능
+//    public void process(int value) {
+//        Runnable r = new Runnable() {
+//            public void run() {
+//                value = 10;
+//                System.out.println(value);
+//            }
+//        };
+//        new Thread(r).start();
+//    }
 }
