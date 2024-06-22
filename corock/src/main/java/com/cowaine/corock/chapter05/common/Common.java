@@ -59,6 +59,7 @@ public class Common {
      * @param discountRate 할인율
      * @return 할인가
      */
+    @Deprecated(forRemoval = true)
     int discountedPrice(int regularPrice, float discountRate) {
         if (regularPrice < 0) {
             throw new IllegalArgumentException();

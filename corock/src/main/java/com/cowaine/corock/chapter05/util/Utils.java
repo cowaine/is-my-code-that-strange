@@ -8,6 +8,7 @@ public class Utils {
      * @param regularPrice 정가
      * @return 적절한 가격이라면 true
      */
+    @Deprecated(forRemoval = true)
     boolean isFairPrice(int regularPrice) {
         if (regularPrice < 0) {
             throw new IllegalArgumentException();
