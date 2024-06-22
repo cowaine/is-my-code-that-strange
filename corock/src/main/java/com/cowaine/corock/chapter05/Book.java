@@ -14,12 +14,7 @@ public class Book {
         // Book.pp60To62();
         // Book.p62();
         // Book.pp64To67();
-
-        DiscountManager discountManager = new DiscountManager();
-        MoneyData money = new MoneyData(1_000);
-
-        discountManager.set(money);
-        log.info("money: {}", money.getAmount());
+        // Book.p72();
     }
 
     private static void pp60To62() {
@@ -51,6 +46,14 @@ public class Book {
         // (...)
 
         log.info("표준 회원 가입 포인트: {}, 프리미엄 회원 가입 포인트: {}", standardMembershipPoint, premiumMembershipPoint);
+    }
+
+    private static void p72() {
+        DiscountManager discountManager = new DiscountManager();
+        MoneyData money = new MoneyData(1_000);
+
+        discountManager.set(money);
+        log.info("money: {}", money.getAmount());
     }
 
 }
