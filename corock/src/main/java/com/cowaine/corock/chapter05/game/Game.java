@@ -1,5 +1,6 @@
 package com.cowaine.corock.chapter05.game;
 
+@Deprecated(forRemoval = true)
 public class Game {
 
     Party party;
@@ -10,10 +11,9 @@ public class Game {
      * @param memberId 장비를 변경하고 싶은 멤버의 ID
      * @param newArmor 입을 갑옷
      */
+    @Deprecated(forRemoval = true)
     void equipArmor(int memberId, Armor newArmor) {
-        if (party.members[memberId].equipments.canChange) {
-            party.members[memberId].equipments.armor = newArmor;
-        }
+        // (...)
     }
 
 }
