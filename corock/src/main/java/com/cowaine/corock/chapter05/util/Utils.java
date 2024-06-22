@@ -1,5 +1,6 @@
 package com.cowaine.corock.chapter05.util;
 
+@Deprecated(forRemoval = true)
 public class Utils {
 
     /**

@@ -2,6 +2,7 @@ package com.cowaine.corock.chapter05.payment;
 
 import lombok.Getter;
 
+@Deprecated(forRemoval = true)
 @Getter
 public class PaymentManager {
 

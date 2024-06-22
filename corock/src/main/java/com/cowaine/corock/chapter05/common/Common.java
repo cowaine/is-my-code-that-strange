@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 /**
  * 범용 처리 클래스다.
  */
+@Deprecated(forRemoval = true)
 public class Common {
 
     // (...)
@@ -19,6 +20,7 @@ public class Common {
      * @param taxRate            세율
      * @return 세금 포함 금액
      */
+    @Deprecated(forRemoval = true)
     public static BigDecimal calcAmountIncludingTax(BigDecimal amountExcludingTax, BigDecimal taxRate) {
         return amountExcludingTax.multiply(taxRate);
     }
@@ -29,6 +31,7 @@ public class Common {
      * @param user 사용자
      * @return 사용자가 이미 탈퇴했다면 true
      */
+    @Deprecated(forRemoval = true)
     public boolean hasResigned(User user) {
         return false;
     }
@@ -38,6 +41,7 @@ public class Common {
      *
      * @param product 상품
      */
+    @Deprecated(forRemoval = true)
     public void createOrder(Product product) {
         // (...)
     }
@@ -48,6 +52,7 @@ public class Common {
      * @param phoneNumber 전화번호
      * @return 유효한 전화번호라면 true
      */
+    @Deprecated(forRemoval = true)
     public static boolean isValidPhoneNumber(String phoneNumber) {
         return false;
     }
