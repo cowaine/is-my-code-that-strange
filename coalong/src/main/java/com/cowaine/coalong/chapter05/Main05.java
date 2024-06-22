@@ -3,6 +3,12 @@ package com.cowaine.coalong.chapter05;
 public class Main05 {
     public static void main(String[] args) {
         page61();
+        page65();
+    }
+
+    private static void page65() {
+        GiftPoint standardMembershipPoint = new GiftPoint(3000);
+        GiftPoint premiumMembershipPoint  = new GiftPoint(10000);
     }
 
     private static void page61() {
