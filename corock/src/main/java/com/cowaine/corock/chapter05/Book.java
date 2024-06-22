@@ -13,11 +13,13 @@ public class Book {
         // Book.p62();
 
         // 표준 회원 가입 포인트
-        GiftPoint standardMembershipPoint = new GiftPoint(3_000);
+        // GiftPoint standardMembershipPoint = new GiftPoint(3_000);
+        GiftPoint standardMembershipPoint = GiftPoint.forStandardMembership();
 
         // (...)
 
-        GiftPoint premiumMembershipPoint = new GiftPoint(10_000);
+        // GiftPoint premiumMembershipPoint = new GiftPoint(10_000);
+        GiftPoint premiumMembershipPoint = GiftPoint.forPremiumMembership();
 
         // (...)
 

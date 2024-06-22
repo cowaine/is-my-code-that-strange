@@ -6,15 +6,34 @@ import lombok.ToString;
 public class GiftPoint {
 
     private static final int MIN_POINT = 0;
+    private static final int STANDARD_MEMBERSHIP_POINT = 3_000;
+    private static final int PREMIUM_MEMBERSHIP_POINT = 10_000;
 
     final int value;
 
-    public GiftPoint(final int point) {
+    /*
+     * 외부에서는 인스턴스를 생성할 수 없고, 클래스 내부에서만 생성할 수 있다.
+     */
+    private GiftPoint(final int point) {
         if (point < MIN_POINT) {
             throw new IllegalArgumentException("포인트를 0 이상 입력해야 합니다.");
         }
 
         value = point;
+    }
+
+    /**
+     * @return 표준 가입 기프트 포인트
+     */
+    public static GiftPoint forStandardMembership() {
+        return new GiftPoint(STANDARD_MEMBERSHIP_POINT);
+    }
+
+    /**
+     * @return 프리미엄 가입 기프트 포인트
+     */
+    public static GiftPoint forPremiumMembership() {
+        return new GiftPoint(PREMIUM_MEMBERSHIP_POINT);
     }
 
     /**
