@@ -25,4 +25,21 @@ public class Common {
         //TODO
         return false;
     }
+
+    /**
+     * @param regularPrice 정가
+     * @param discountRate 할인율
+     * @return 할인 가격
+     */
+    int discountedPrice(int regularPrice, float discountRate) {
+        if (regularPrice < 0) {
+            throw new IllegalArgumentException();
+        }
+
+        if (discountRate < 0.0f) {
+            throw new IllegalArgumentException();
+        }
+
+        return (int) (regularPrice * discountRate);
+    }
 }
