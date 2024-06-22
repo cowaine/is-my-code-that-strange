@@ -2,6 +2,7 @@ package com.cowaine.corock.chapter05.util;
 
 import java.util.List;
 
+@Deprecated(forRemoval = true)
 public class MagicPointUtils {
 
     /**
@@ -13,6 +14,7 @@ public class MagicPointUtils {
      * @param recoveryAmount          회복량
      * @return 회복 후의 매직 포인트 잔량
      */
+    @Deprecated(forRemoval = true)
     int recoverMagicPoint(int currentMagicPoint, int originalMaxMagicPoint, List<Integer> maxMagicPointIncrements,
                           int recoveryAmount) {
 
