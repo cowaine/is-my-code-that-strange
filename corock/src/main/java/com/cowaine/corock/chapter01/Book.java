@@ -1,10 +1,9 @@
-package com.cowaine.corock;
+package com.cowaine.corock.chapter01;
 
 import com.cowaine.corock.chapter01.contract.ContractAmount;
 import com.cowaine.corock.chapter01.game.Magic;
 import com.cowaine.corock.chapter01.game.Member;
 import com.cowaine.corock.chapter01.game.RpgService;
-import com.cowaine.corock.chapter02.game.Damage;
 import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigDecimal;
@@ -13,11 +12,8 @@ import java.math.BigDecimal;
 public class Book {
 
     public static void main(String[] args) {
-        // Book.p4();
-        // Book.p10();
-
-        Damage damage = new Damage();
-        log.info("damage: {}", damage.calculate(40, 30, 20, 10));
+        Book.p4();
+        Book.p10();
     }
 
     private static void p4() {
