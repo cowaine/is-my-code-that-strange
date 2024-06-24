@@ -12,6 +12,8 @@ public class AttackManager {
             case LIGHTING:
                 attackPower = 50 + (int) (member.getLevel() * 1.5);
                 break;
+            // 추가를 깜빡함
+            // case HELL_FIRE:
         }
 
         return attackPower;

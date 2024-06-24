@@ -10,6 +10,11 @@ public enum MagicType {
     /**
      * 번개 계열의 마법
      */
-    LIGHTING
+    LIGHTING,
+
+    /**
+     * 헬파이어
+     */
+    HELL_FIRE
 
 }
