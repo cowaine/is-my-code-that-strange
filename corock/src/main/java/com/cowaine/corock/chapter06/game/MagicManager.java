@@ -1,7 +1,9 @@
 package com.cowaine.corock.chapter06.game;
 
+@Deprecated(forRemoval = true)
 public class MagicManager {
 
+    @Deprecated(forRemoval = true)
     public String getName(MagicType magicType) {
         String name = "";
 
@@ -23,6 +25,7 @@ public class MagicManager {
     /**
      * @author 개발 1팀
      */
+    @Deprecated(forRemoval = true)
     public int costMagicPoint(MagicType magicType, Member member) {
         int magicPoint = 0;
 
@@ -44,6 +47,7 @@ public class MagicManager {
     /**
      * @author 개발 2팀
      */
+    @Deprecated(forRemoval = true)
     public int costTechnicalPoint(MagicType magicType, Member member) {
         int technicalPoint = 0;
 

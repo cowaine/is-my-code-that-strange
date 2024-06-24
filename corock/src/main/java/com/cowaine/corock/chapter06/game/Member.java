@@ -12,6 +12,9 @@ public class Member {
     private final int magicPoint;
     private final int technicalPoint;
     private final int level;
+    private final int agility;
+    private final int magicAttack;
+    private final int vitality;
 
     public boolean canAct() {
         return false;

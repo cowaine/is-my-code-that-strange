@@ -1,7 +1,9 @@
 package com.cowaine.corock.chapter06.game;
 
+@Deprecated(forRemoval = true)
 public class AttackManager {
 
+    @Deprecated(forRemoval = true)
     public int attackPower(MagicType magicType, Member member) {
         int attackPower = 0;
 
