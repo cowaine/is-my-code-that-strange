@@ -13,13 +13,13 @@ public class Main {
 
     void chapter03() {
         Money money = new Money(100, Currency.getInstance(Locale.KOREA));
-        int originalPrice = 1000;
+        Money originalPrice = new Money(1000, Currency.getInstance(Locale.KOREA));
         boolean specialServiceAdded = false;
-        int additionalServiceFee = 0;
-
+        Money additionalServiceFee = new Money(2000, Currency.getInstance(Locale.KOREA));
         Money addedMoney = money.add(originalPrice);
+
         if (specialServiceAdded) {
-            money.add(additionalServiceFee);
+            addedMoney.add(additionalServiceFee);
         }
     }
 }
