@@ -9,6 +9,7 @@ public class Member {
 
     private final int hitPoint;
     private final int magicPoint;
+    private final int technicalPoint;
 
     public boolean canAct() {
         return false;

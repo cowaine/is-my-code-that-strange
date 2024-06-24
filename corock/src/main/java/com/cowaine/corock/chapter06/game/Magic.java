@@ -8,5 +8,6 @@ import lombok.RequiredArgsConstructor;
 public class Magic {
 
     private final int costMagicPoint;
+    private final int technicalPoint;
 
 }
