@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 public class Member {
 
     private final int hitPoint;
+    private final int maxHitPoint;
     private final int magicPoint;
     private final int technicalPoint;
 
