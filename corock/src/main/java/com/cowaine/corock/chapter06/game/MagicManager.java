@@ -17,4 +17,19 @@ public class MagicManager {
         return name;
     }
 
+    public int costMagicPoint(MagicType magicType, Member member) {
+        int magicPoint = 0;
+
+        switch (magicType) {
+            case FIRE:
+                magicPoint = 2;
+                break;
+            case LIGHTING:
+                magicPoint = 5 + (int) (member.getLevel() * 0.2);
+                break;
+        }
+
+        return magicPoint;
+    }
+
 }

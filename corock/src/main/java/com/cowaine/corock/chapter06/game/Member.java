@@ -11,6 +11,7 @@ public class Member {
     private final int maxHitPoint;
     private final int magicPoint;
     private final int technicalPoint;
+    private final int level;
 
     public boolean canAct() {
         return false;
