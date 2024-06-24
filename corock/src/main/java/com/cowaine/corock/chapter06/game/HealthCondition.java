@@ -13,9 +13,9 @@ public enum HealthCondition {
             return HealthCondition.DANGER;
         } else if (hitPointRate < 0.5) {
             return HealthCondition.CAUTION;
-        } else {
-            return HealthCondition.FINE;
         }
+
+        return HealthCondition.FINE;
     }
 
 }
