@@ -2,47 +2,24 @@ package com.cowaine.corock.chapter06.game;
 
 public class RpgService {
 
+    /**
+     * @implNote 조기 반환(early return)은 조건 로직과 실행 로직을 분리할 수 있다는 장점이 있다.
+     */
     public void cast(Member member, Magic magic) {
-        // 살아 있는가
-        if (0 < member.getHitPoint()) {
-            // 움직일 수 있는가
-            if (member.canAct()) {
-                // 매직 포인트가 남아 있는가
-                if (magic.getCostMagicPoint() <= member.getMagicPoint()) {
-                    member.consumeMagicPoint(magic.getCostMagicPoint());
-                    member.chant(magic);
-                }
-            }
+        if (member.getHitPoint() <= 0) {
+            return;
         }
 
-        /*
-         * if (조건) {
-         *
-         *     // 수십 ~ 수백 줄의 코드
-         *
-         *     if (조건) {
-         *
-         *         // 수십 ~ 수백 줄의 코드
-         *
-         *         if (조건) {
-         *
-         *             // 수십 ~ 수백 줄의 코드
-         *
-         *             if (조건) {
-         *
-         *                 // 수십 ~ 수백 줄의 코드
-         *
-         *             }
-         *         }
-         *
-         *         // 수십 ~ 수백 줄의 코드
-         *
-         *     }
-         *
-         *     // 수십 ~ 수백 줄의 코드
-         *
-         * }
-         */
+        if (!member.canAct()) {
+            return;
+        }
+
+        if (member.getMagicPoint() < magic.getCostMagicPoint()) {
+            return;
+        }
+
+        member.consumeMagicPoint(magic.getCostMagicPoint());
+        member.chant(magic);
     }
 
 }
