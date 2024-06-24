@@ -7,18 +7,15 @@ public enum HealthCondition {
     public static HealthCondition from(Member member) {
         float hitPointRate = (float) member.getHitPoint() / member.getMaxHitPoint();
 
-        HealthCondition currentHealthCondition;
         if (hitPointRate == 0) {
-            currentHealthCondition = HealthCondition.DEAD;
+            return HealthCondition.DEAD;
         } else if (hitPointRate < 0.3) {
-            currentHealthCondition = HealthCondition.DANGER;
+            return HealthCondition.DANGER;
         } else if (hitPointRate < 0.5) {
-            currentHealthCondition = HealthCondition.CAUTION;
+            return HealthCondition.CAUTION;
         } else {
-            currentHealthCondition = HealthCondition.FINE;
+            return HealthCondition.FINE;
         }
-
-        return currentHealthCondition;
     }
 
 }
