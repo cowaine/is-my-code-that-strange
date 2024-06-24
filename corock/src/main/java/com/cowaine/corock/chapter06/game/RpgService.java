@@ -20,7 +20,7 @@ public class RpgService {
         }
 
         // 새로 추가함
-        if (member.getTechnicalPoint() < magic.getTechnicalPoint()) {
+        if (member.getTechnicalPoint() < magic.getCostTechnicalPoint()) {
             return;
         }
 
