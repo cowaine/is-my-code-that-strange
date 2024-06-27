@@ -24,7 +24,7 @@ public class RpgService {
             return;
         }
 
-        member.consumeMagicPoint(magic.costMagicPoint());
+        member.consumeMagicPoint(magic);
         member.chant(magic);
     }
 

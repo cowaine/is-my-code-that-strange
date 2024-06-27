@@ -3,9 +3,17 @@ package com.cowaine.corock.chapter06;
 import com.cowaine.corock.chapter06.domain.Circle;
 import com.cowaine.corock.chapter06.domain.Rectangle;
 import com.cowaine.corock.chapter06.domain.Shape;
+import com.cowaine.corock.chapter06.game.Fire;
 import com.cowaine.corock.chapter06.game.HealthCondition;
+import com.cowaine.corock.chapter06.game.HellFire;
+import com.cowaine.corock.chapter06.game.Lightning;
+import com.cowaine.corock.chapter06.game.Magic;
+import com.cowaine.corock.chapter06.game.MagicType;
 import com.cowaine.corock.chapter06.game.Member;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Slf4j
 public class Book {
@@ -14,6 +22,23 @@ public class Book {
         // Book.pp92To93();
         // Book.pp101To103();
         // Book.pp103To104();
+
+        Member member = new Member(100, 999, 50, 25, 1, 4, 4, 4);
+
+        Map<MagicType, Magic> magics = new HashMap<>();
+
+        // (...)
+
+        final Fire fire = new Fire(member);
+        final Lightning lightning = new Lightning(member);
+        final HellFire hellFire = new HellFire(member);
+
+        magics.put(MagicType.FIRE, fire);
+        magics.put(MagicType.LIGHTNING, lightning);
+        magics.put(MagicType.HELL_FIRE, hellFire);
+
+        // 마법 공격력 변경하기
+        member.magicAttack(MagicType.HELL_FIRE);
     }
 
     private static void pp92To93() {
