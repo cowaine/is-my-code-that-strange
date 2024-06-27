@@ -11,7 +11,7 @@ public class MagicManager {
             case FIRE:
                 name = "파이어";
                 break;
-            case LIGHTING:
+            case LIGHTNING:
                 name = "라이트닝";
                 break;
             case HELL_FIRE:
@@ -33,7 +33,7 @@ public class MagicManager {
             case FIRE:
                 magicPoint = 2;
                 break;
-            case LIGHTING:
+            case LIGHTNING:
                 magicPoint = 5 + (int) (member.getLevel() * 0.2);
                 break;
             case HELL_FIRE:
@@ -55,7 +55,7 @@ public class MagicManager {
             case FIRE:
                 technicalPoint = 0;
                 break;
-            case LIGHTING:
+            case LIGHTNING:
                 technicalPoint = 5;
                 break;
         }
