@@ -36,24 +36,16 @@ import java.util.Map;
 public class Book {
 
     public static void main(String[] args) {
-        // Book.pp92To93();
-        // Book.pp101To103();
-        // Book.pp103To104();
-        // Book.pp109To115();
-        // Book.pp118To119();
-        // Book.p121();
-        // Book.pp122To123();
-        // Book.p125();
-        // Book.pp126To127();
-
-        Member member = new Member(300, 999, 100, 40, 1, 4, 4, 4, Collections.emptyMap());
-        HitPointDamage hitPointDamage = new HitPointDamage(member);
-        MagicPointDamage magicPointDamage = new MagicPointDamage(member);
-
-        Skill skill = new Skill(Map.of(DamageType.HIT_POINT, hitPointDamage, DamageType.MAGIC_POINT, magicPointDamage));
-        skill.applyDamage(DamageType.MAGIC_POINT, 30);
-
-        log.info("member: {}", member);
+        Book.pp92To93();
+        Book.pp101To103();
+        Book.pp103To104();
+        Book.pp109To115();
+        Book.pp118To119();
+        Book.p121();
+        Book.pp122To123();
+        Book.p125();
+        Book.pp126To127();
+        Book.pp130To132();
     }
 
     private static void pp92To93() {
@@ -160,6 +152,17 @@ public class Book {
         Money busySeasonFee = hotelRates.busySeasonFee();
 
         log.info("busySeasonFee: {}", busySeasonFee.getAmount());
+    }
+
+    private static void pp130To132() {
+        Member member = new Member(300, 999, 100, 40, 1, 4, 4, 4, Collections.emptyMap());
+        HitPointDamage hitPointDamage = new HitPointDamage(member);
+        MagicPointDamage magicPointDamage = new MagicPointDamage(member);
+
+        Skill skill = new Skill(Map.of(DamageType.HIT_POINT, hitPointDamage, DamageType.MAGIC_POINT, magicPointDamage));
+        skill.applyDamage(DamageType.MAGIC_POINT, 30);
+
+        log.info("member: {}", member);
     }
 
 }
