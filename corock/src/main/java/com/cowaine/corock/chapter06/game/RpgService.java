@@ -15,16 +15,16 @@ public class RpgService {
             return;
         }
 
-        if (member.getMagicPoint() < magic.getCostMagicPoint()) {
+        if (member.getMagicPoint() < magic.costMagicPoint()) {
             return;
         }
 
         // 새로 추가함
-        if (member.getTechnicalPoint() < magic.getCostTechnicalPoint()) {
+        if (member.getTechnicalPoint() < magic.costTechnicalPoint()) {
             return;
         }
 
-        member.consumeMagicPoint(magic.getCostMagicPoint());
+        member.consumeMagicPoint(magic.costMagicPoint());
         member.chant(magic);
     }
 

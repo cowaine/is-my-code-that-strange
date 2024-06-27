@@ -1,38 +1,36 @@
 package com.cowaine.corock.chapter06.game;
 
-import lombok.Getter;
+/**
+ * 마법 인터페이스다.
+ */
+public interface Magic {
 
-@Getter
-public class Magic {
+    /**
+     * 마법 이름을 반환한다.
+     *
+     * @return 마법 이름
+     */
+    String name();
 
-    private final String name;
-    private final int costMagicPoint;
-    private final int attackPower;
-    private final int costTechnicalPoint;
+    /**
+     * 매직 포인트 소비량을 반환한다.
+     *
+     * @return 매직 포인트 소비량
+     */
+    int costMagicPoint();
 
-    public Magic(final MagicType magicType, final Member member) {
-        switch (magicType) {
-            case FIRE:
-                name = "파이어";
-                costMagicPoint = 2;
-                attackPower = 20 + (int) (member.getLevel() * 0.5);
-                costTechnicalPoint = 0;
-                break;
-            case LIGHTNING:
-                name = "라이트닝";
-                costMagicPoint = 5 + (int) (member.getLevel() * 0.2);
-                attackPower = 50 + (int) (member.getAgility() * 1.5);
-                costTechnicalPoint = 5;
-                break;
-            case HELL_FIRE:
-                name = "헬파이어";
-                costMagicPoint = 16;
-                attackPower = 200 + (int) (member.getMagicAttack() * 0.5 + member.getVitality() * 2);
-                costTechnicalPoint = 20 + (int) (member.getLevel() * 0.4);
-                break;
-            default:
-                throw new IllegalArgumentException();
-        }
-    }
+    /**
+     * 공격력을 반환한다.
+     *
+     * @return 공격력
+     */
+    int attackPower();
+
+    /**
+     * 테크니컬 포인트 소비량을 반환한다.
+     *
+     * @return 테크니컬 포인트 소비량
+     */
+    int costTechnicalPoint();
 
 }

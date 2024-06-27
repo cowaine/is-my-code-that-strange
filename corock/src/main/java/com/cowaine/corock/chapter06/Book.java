@@ -13,12 +13,7 @@ public class Book {
     public static void main(String[] args) {
         // Book.pp92To93();
         // Book.pp101To103();
-
-        Shape shape = new Circle(10.0);
-        log.info("The area of a shape: {}", shape.area());
-
-        shape = new Rectangle(20.0, 25.0);
-        log.info("The area of a shape: {}", shape.area());
+        // Book.pp103To104();
     }
 
     private static void pp92To93() {
@@ -48,6 +43,14 @@ public class Book {
         if (shape instanceof Circle) {
             log.info("The area of a circle: {}", ((Circle) shape).area());
         }
+    }
+
+    private static void pp103To104() {
+        Shape shape = new Circle(10.0);
+        log.info("The area of a shape: {}", shape.area());
+
+        shape = new Rectangle(20.0, 25.0);
+        log.info("The area of a shape: {}", shape.area());
     }
 
 }
