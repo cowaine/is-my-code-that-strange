@@ -1,18 +1,17 @@
 package com.cowaine.coalong.chapter06;
 
 public class HealthCheck {
-    void checkHealth(Member member) {
-        HealthCondition currentHealthCondition;
-
+    HealthCondition checkHealth(Member member) {
         float hitPointRate = (float) member.hitPoint / member.maxHitPoint;
+
         if (hitPointRate == 0) {
-            currentHealthCondition = HealthCondition.DEAD;
+            return HealthCondition.DEAD;
         } else if (hitPointRate < 0.3) {
-            currentHealthCondition = HealthCondition.DANGER;
+            return HealthCondition.DANGER;
         } else if (hitPointRate < 0.5) {
-            currentHealthCondition = HealthCondition.CAUTION;
+            return HealthCondition.CAUTION;
         } else {
-            currentHealthCondition = HealthCondition.FINE;
+            return HealthCondition.FINE;
         }
     }
 }
