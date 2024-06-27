@@ -11,8 +11,21 @@ public class MagicManager {
             case lighting:
                 name = "라이트닝";
                 break;
-
         }
         return name;
+    }
+
+    int costMagicPoint(MagicType magicType, Member member) {
+        int magicPoint = 0;
+
+        switch (magicType) {
+            case fire:
+                magicPoint = 2;
+                break;
+            case lighting:
+                magicPoint = 5 + (int) (member.level * 0.2);
+                break;
+        }
+        return magicPoint;
     }
 }

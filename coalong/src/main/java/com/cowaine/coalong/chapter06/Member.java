@@ -1,6 +1,7 @@
 package com.cowaine.coalong.chapter06;
 
 public class Member {
+    int level;
     int maxHitPoint;
     int technicalPoint;
     int hitPoint;
