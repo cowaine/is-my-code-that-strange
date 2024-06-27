@@ -1,14 +1,13 @@
 package com.cowaine.coalong.chapter06;
 
-
 import lombok.RequiredArgsConstructor;
 
-// 원
 @RequiredArgsConstructor
-public class Circle {
+public class Circle implements Shape {
     private final double radius;
 
-    double area() {
+    @Override
+    public double area() {
         return radius * radius * Math.PI;
     }
 }
