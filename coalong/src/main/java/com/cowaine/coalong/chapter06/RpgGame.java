@@ -7,8 +7,10 @@ public class RpgGame {
         if (member.hitPoint <= 0) return;
         if (!member.canAct()) return;
         if (member.magicPoint < magic.costMaicPoint) return;
+        if (member.technicalPoint < magic.costMaicPoint) return;
 
         member.consumeMagicPoint(magic.costMaicPoint);
         member.chant(magic);
+        member.gainTechnicalPoint(magic.incrementTechnicalPoint);
     }
 }

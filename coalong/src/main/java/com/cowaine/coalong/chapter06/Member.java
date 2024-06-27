@@ -1,6 +1,7 @@
 package com.cowaine.coalong.chapter06;
 
 public class Member {
+    int technicalPoint;
     int hitPoint;
     int magicPoint;
 
@@ -12,5 +13,8 @@ public class Member {
     }
 
     void chant(Magic magic) {
+    }
+
+    void gainTechnicalPoint(int incrementTechnicalPoint) {
     }
 }
