@@ -1,66 +1,33 @@
 package com.cowaine.coalong.chapter06;
 
 public class MagicManager {
-    String getName(MagicType magicType) {
-        String name = "";
+    String name;
+    int costMagicPoint;
+    int attackPower;
+    int costTechnicalPoint;
 
+    MagicManager(final MagicType magicType, final Member member) {
         switch (magicType) {
             case fire:
                 name = "파이어";
+                costMagicPoint = 2;
+                attackPower = (int) (20 + member.level * 0.5);
+                costTechnicalPoint = 0;
                 break;
             case lighting:
                 name = "라이트닝";
+                costMagicPoint = (int) (5 + member.level * 0.2);
+                attackPower = (int) (50 + member.agility * 1.5);
+                costTechnicalPoint = 5;
                 break;
             case hellFire:
                 name = "헬파이어";
+                costMagicPoint = 16;
+                attackPower = (int) (200 + member.magicAttack * 0.5 + member.vitality * 2));
+                costTechnicalPoint = (int) (20 + member.level * 0.4);
                 break;
+            default:
+                throw new IllegalArgumentException();
         }
-        return name;
-    }
-
-    int costMagicPoint(MagicType magicType, Member member) {
-        int magicPoint = 0;
-
-        switch (magicType) {
-            case fire:
-                magicPoint = 2;
-                break;
-            case lighting:
-                magicPoint = 5 + (int) (member.level * 0.2);
-                break;
-            case hellFire:
-                magicPoint = 16;
-                break;
-        }
-        return magicPoint;
-    }
-
-    int attackPower(MagicType magicType, Member member) {
-        int attackPower = 0;
-        switch (magicType) {
-            case fire:
-                attackPower = 20 + (int) (member.level * 0.5);
-                break;
-            case lighting:
-                attackPower = 50 + (int) (member.agility * 1.5);
-                break;
-            // 문제점 1. hellFire 추가를 깜빡함
-        }
-        return attackPower;
-    }
-
-    // 문제점 2.
-    int costTechnicalPoint(MagicType magicType, Member member) {
-        int technicalPoint = 0;
-
-        switch (magicType) {
-            case fire:
-                technicalPoint = 0;
-                break;
-            case lighting:
-                technicalPoint = 5;
-                break;
-        }
-        return technicalPoint;
     }
 }

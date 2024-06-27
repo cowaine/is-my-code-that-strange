@@ -1,6 +1,8 @@
 package com.cowaine.coalong.chapter06;
 
 public class Member {
+    int vitality;
+    int magicAttack;
     int agility;
     int level;
     int maxHitPoint;
