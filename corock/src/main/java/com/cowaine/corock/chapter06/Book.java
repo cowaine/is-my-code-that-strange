@@ -11,13 +11,17 @@ import com.cowaine.corock.chapter06.customer.SilverCustomerPolicy;
 import com.cowaine.corock.chapter06.domain.Circle;
 import com.cowaine.corock.chapter06.domain.Rectangle;
 import com.cowaine.corock.chapter06.domain.Shape;
+import com.cowaine.corock.chapter06.game.DamageType;
 import com.cowaine.corock.chapter06.game.Fire;
 import com.cowaine.corock.chapter06.game.HealthCondition;
 import com.cowaine.corock.chapter06.game.HellFire;
+import com.cowaine.corock.chapter06.game.HitPointDamage;
 import com.cowaine.corock.chapter06.game.Lightning;
 import com.cowaine.corock.chapter06.game.Magic;
+import com.cowaine.corock.chapter06.game.MagicPointDamage;
 import com.cowaine.corock.chapter06.game.MagicType;
 import com.cowaine.corock.chapter06.game.Member;
+import com.cowaine.corock.chapter06.game.Skill;
 import com.cowaine.corock.chapter06.hotel.HotelRates;
 import com.cowaine.corock.chapter06.hotel.Money;
 import com.cowaine.corock.chapter06.hotel.PremiumRates;
@@ -41,6 +45,15 @@ public class Book {
         // Book.pp122To123();
         // Book.p125();
         // Book.pp126To127();
+
+        Member member = new Member(300, 999, 100, 40, 1, 4, 4, 4, Collections.emptyMap());
+        HitPointDamage hitPointDamage = new HitPointDamage(member);
+        MagicPointDamage magicPointDamage = new MagicPointDamage(member);
+
+        Skill skill = new Skill(Map.of(DamageType.HIT_POINT, hitPointDamage, DamageType.MAGIC_POINT, magicPointDamage));
+        skill.applyDamage(DamageType.MAGIC_POINT, 30);
+
+        log.info("member: {}", member);
     }
 
     private static void pp92To93() {
