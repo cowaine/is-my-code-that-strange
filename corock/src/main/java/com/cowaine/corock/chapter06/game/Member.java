@@ -60,7 +60,7 @@ public class Member {
      * @return 소비한 매직 포인트
      */
     int consumeMagicPoint(Magic magic) {
-        return magic.costMagicPoint();
+        return magic.costMagicPoint().getValue();
     }
 
     /**
@@ -70,7 +70,7 @@ public class Member {
      * @return 소비한 테크니컬 포인트
      */
     private int consumeTechnicalPoint(Magic magic) {
-        return magic.costTechnicalPoint();
+        return magic.costTechnicalPoint().getValue();
     }
 
     /**
@@ -80,7 +80,7 @@ public class Member {
      * @return 계산된 대미지
      */
     private int magicDamage(Magic magic) {
-        return magic.attackPower();
+        return magic.attackPower().getValue();
     }
 
 }

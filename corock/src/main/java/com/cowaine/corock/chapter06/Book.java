@@ -23,23 +23,7 @@ public class Book {
         // Book.pp92To93();
         // Book.pp101To103();
         // Book.pp103To104();
-
-        Map<MagicType, Magic> magics = new EnumMap<>(MagicType.class);
-
-        Member member = new Member(100, 999, 50, 25, 1, 4, 4, 4, magics);
-
-        // (...)
-
-        final Fire fire = new Fire(member);
-        final Lightning lightning = new Lightning(member);
-        final HellFire hellFire = new HellFire(member);
-
-        magics.put(MagicType.FIRE, fire);
-        magics.put(MagicType.LIGHTNING, lightning);
-        magics.put(MagicType.HELL_FIRE, hellFire);
-
-        // 마법 공격력 변경하기
-        log.info("Member's magic attack: {}", member.magicAttack(MagicType.HELL_FIRE));
+        // Book.pp109To115();
     }
 
     private static void pp92To93() {
@@ -78,6 +62,25 @@ public class Book {
 
         shape = new Rectangle(20.0, 25.0);
         log.info("The area of a shape: {}", shape.area());
+    }
+
+    private static void pp109To115() {
+        Map<MagicType, Magic> magics = new EnumMap<>(MagicType.class);
+
+        Member member = new Member(100, 999, 50, 25, 1, 4, 4, 4, magics);
+
+        // (...)
+
+        final Fire fire = new Fire(member);
+        final Lightning lightning = new Lightning(member);
+        final HellFire hellFire = new HellFire(member);
+
+        magics.put(MagicType.FIRE, fire);
+        magics.put(MagicType.LIGHTNING, lightning);
+        magics.put(MagicType.HELL_FIRE, hellFire);
+
+        // 마법 공격력 변경하기
+        log.info("Member's magic attack: {}", member.magicAttack(MagicType.HELL_FIRE));
     }
 
 }

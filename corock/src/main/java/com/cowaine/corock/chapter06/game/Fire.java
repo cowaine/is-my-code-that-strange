@@ -19,24 +19,24 @@ public class Fire implements Magic {
      * {@inheritDoc}
      */
     @Override
-    public int costMagicPoint() {
-        return 2;
+    public MagicPoint costMagicPoint() {
+        return new MagicPoint(2);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public int attackPower() {
-        return 20 + (int) (member.getLevel() * 0.5);
+    public AttackPower attackPower() {
+        return new AttackPower(20 + (int) (member.getLevel() * 0.5));
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public int costTechnicalPoint() {
-        return 0;
+    public TechnicalPoint costTechnicalPoint() {
+        return new TechnicalPoint(0);
     }
 
 }

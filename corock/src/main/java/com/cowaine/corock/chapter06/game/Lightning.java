@@ -19,24 +19,24 @@ public class Lightning implements Magic {
      * {@inheritDoc}
      */
     @Override
-    public int costMagicPoint() {
-        return 5 + (int) (member.getLevel() * 0.2);
+    public MagicPoint costMagicPoint() {
+        return new MagicPoint(5 + (int) (member.getLevel() * 0.2));
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public int attackPower() {
-        return 50 + (int) (member.getAgility() * 1.5);
+    public AttackPower attackPower() {
+        return new AttackPower(50 + (int) (member.getAgility() * 1.5));
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public int costTechnicalPoint() {
-        return 5;
+    public TechnicalPoint costTechnicalPoint() {
+        return new TechnicalPoint(5);
     }
 
 }

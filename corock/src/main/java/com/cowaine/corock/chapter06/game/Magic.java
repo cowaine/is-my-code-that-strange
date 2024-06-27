@@ -17,20 +17,20 @@ public interface Magic {
      *
      * @return 매직 포인트 소비량
      */
-    int costMagicPoint();
+    MagicPoint costMagicPoint();
 
     /**
      * 공격력을 반환한다.
      *
      * @return 공격력
      */
-    int attackPower();
+    AttackPower attackPower();
 
     /**
      * 테크니컬 포인트 소비량을 반환한다.
      *
      * @return 테크니컬 포인트 소비량
      */
-    int costTechnicalPoint();
+    TechnicalPoint costTechnicalPoint();
 
 }
