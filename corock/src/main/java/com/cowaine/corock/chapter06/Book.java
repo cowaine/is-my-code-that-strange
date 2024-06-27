@@ -2,10 +2,12 @@ package com.cowaine.corock.chapter06;
 
 import com.cowaine.corock.chapter06.customer.Customer;
 import com.cowaine.corock.chapter06.customer.ExcellentCustomerPolicy;
+import com.cowaine.corock.chapter06.customer.GoldCustomerPolicy;
 import com.cowaine.corock.chapter06.customer.GoldCustomerPurchaseAmountRule;
 import com.cowaine.corock.chapter06.customer.PurchaseFrequencyRule;
 import com.cowaine.corock.chapter06.customer.PurchaseHistory;
 import com.cowaine.corock.chapter06.customer.ReturnRateRule;
+import com.cowaine.corock.chapter06.customer.SilverCustomerPolicy;
 import com.cowaine.corock.chapter06.domain.Circle;
 import com.cowaine.corock.chapter06.domain.Rectangle;
 import com.cowaine.corock.chapter06.domain.Shape;
@@ -31,13 +33,15 @@ public class Book {
         // Book.pp103To104();
         // Book.pp109To115();
         // Book.pp118To119();
+        // Book.p121();
 
-        ExcellentCustomerPolicy goldCustomerPolicy = new ExcellentCustomerPolicy();
-        goldCustomerPolicy.add(new GoldCustomerPurchaseAmountRule());
-        goldCustomerPolicy.add(new PurchaseFrequencyRule());
-        goldCustomerPolicy.add(new ReturnRateRule());
+        PurchaseHistory purchaseHistory = new PurchaseHistory(500_000, 10, 0.001f);
 
-        log.info("골드 회원 여부: {}", goldCustomerPolicy.complyWithAll(new PurchaseHistory(500_000, 10, 0.001f)));
+        GoldCustomerPolicy goldCustomerPolicy = new GoldCustomerPolicy();
+        SilverCustomerPolicy silverCustomerPolicy = new SilverCustomerPolicy();
+
+        log.info("골드 회원 여부: {}", goldCustomerPolicy.complyWithAll(purchaseHistory));
+        log.info("실버 회원 여부: {}", silverCustomerPolicy.complyWithAll(purchaseHistory));
     }
 
     private static void pp92To93() {
@@ -103,6 +107,15 @@ public class Book {
 
         log.info("골드 회원 여부: {}", customer.isGoldCustomer(purchaseHistory));
         log.info("실버 회원 여부: {}", customer.isSilverCustomer(purchaseHistory));
+    }
+
+    private static void p121() {
+        ExcellentCustomerPolicy goldCustomerPolicy = new ExcellentCustomerPolicy();
+        goldCustomerPolicy.add(new GoldCustomerPurchaseAmountRule());
+        goldCustomerPolicy.add(new PurchaseFrequencyRule());
+        goldCustomerPolicy.add(new ReturnRateRule());
+
+        log.info("골드 회원 여부: {}", goldCustomerPolicy.complyWithAll(new PurchaseHistory(500_000, 10, 0.001f)));
     }
 
 }
