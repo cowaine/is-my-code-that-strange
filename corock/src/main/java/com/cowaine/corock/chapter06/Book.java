@@ -12,7 +12,8 @@ import com.cowaine.corock.chapter06.game.MagicType;
 import com.cowaine.corock.chapter06.game.Member;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.HashMap;
+import java.util.Collections;
+import java.util.EnumMap;
 import java.util.Map;
 
 @Slf4j
@@ -23,9 +24,9 @@ public class Book {
         // Book.pp101To103();
         // Book.pp103To104();
 
-        Member member = new Member(100, 999, 50, 25, 1, 4, 4, 4);
+        Map<MagicType, Magic> magics = new EnumMap<>(MagicType.class);
 
-        Map<MagicType, Magic> magics = new HashMap<>();
+        Member member = new Member(100, 999, 50, 25, 1, 4, 4, 4, magics);
 
         // (...)
 
@@ -38,11 +39,12 @@ public class Book {
         magics.put(MagicType.HELL_FIRE, hellFire);
 
         // 마법 공격력 변경하기
-        member.magicAttack(MagicType.HELL_FIRE);
+        log.info("Member's magic attack: {}", member.magicAttack(MagicType.HELL_FIRE));
     }
 
     private static void pp92To93() {
-        HealthCondition healthCondition = HealthCondition.from(new Member(20, 100, 0, 10, 1, 4, 4, 4));
+        Member member = new Member(20, 100, 0, 10, 1, 4, 4, 4, Collections.emptyMap());
+        HealthCondition healthCondition = HealthCondition.from(member);
         log.info("Member's health condition: {}", healthCondition);
     }
 
