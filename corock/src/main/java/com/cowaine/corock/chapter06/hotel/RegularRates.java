@@ -7,4 +7,9 @@ public class RegularRates implements HotelRates {
         return new Money(70000);
     }
 
+    @Override
+    public Money busySeasonFee() {
+        return fee().add(new Money(30000));
+    }
+
 }
