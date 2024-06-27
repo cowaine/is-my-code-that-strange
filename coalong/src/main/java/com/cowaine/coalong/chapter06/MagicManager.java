@@ -28,4 +28,17 @@ public class MagicManager {
         }
         return magicPoint;
     }
+
+    int attackPower(MagicType magicType, Member member) {
+        int attackPower = 0;
+        switch (magicType) {
+            case fire:
+                attackPower = 20 + (int) (member.level * 0.5);
+                break;
+            case lighting:
+                attackPower = 50 + (int) (member.agility * 1.5);
+                break;
+        }
+        return attackPower;
+    }
 }
