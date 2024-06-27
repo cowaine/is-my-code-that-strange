@@ -11,6 +11,9 @@ public class MagicManager {
             case lighting:
                 name = "라이트닝";
                 break;
+            case hellFire:
+                name = "헬파이어";
+                break;
         }
         return name;
     }
@@ -25,6 +28,9 @@ public class MagicManager {
             case lighting:
                 magicPoint = 5 + (int) (member.level * 0.2);
                 break;
+            case hellFire:
+                magicPoint = 16;
+                break;
         }
         return magicPoint;
     }
@@ -38,7 +44,23 @@ public class MagicManager {
             case lighting:
                 attackPower = 50 + (int) (member.agility * 1.5);
                 break;
+            // 문제점 1. hellFire 추가를 깜빡함
         }
         return attackPower;
+    }
+
+    // 문제점 2.
+    int costTechnicalPoint(MagicType magicType, Member member) {
+        int technicalPoint = 0;
+
+        switch (magicType) {
+            case fire:
+                technicalPoint = 0;
+                break;
+            case lighting:
+                technicalPoint = 5;
+                break;
+        }
+        return technicalPoint;
     }
 }
