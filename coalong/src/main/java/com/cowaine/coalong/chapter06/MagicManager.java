@@ -23,7 +23,7 @@ public class MagicManager {
             case hellFire:
                 name = "헬파이어";
                 costMagicPoint = 16;
-                attackPower = (int) (200 + member.magicAttack * 0.5 + member.vitality * 2));
+                attackPower = (int) (200 + member.magicAttack * 0.5 + member.vitality * 2);
                 costTechnicalPoint = (int) (20 + member.level * 0.4);
                 break;
             default:
