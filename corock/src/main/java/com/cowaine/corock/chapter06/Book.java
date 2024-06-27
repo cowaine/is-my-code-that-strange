@@ -1,7 +1,11 @@
 package com.cowaine.corock.chapter06;
 
 import com.cowaine.corock.chapter06.customer.Customer;
+import com.cowaine.corock.chapter06.customer.ExcellentCustomerPolicy;
+import com.cowaine.corock.chapter06.customer.GoldCustomerPurchaseAmountRule;
+import com.cowaine.corock.chapter06.customer.PurchaseFrequencyRule;
 import com.cowaine.corock.chapter06.customer.PurchaseHistory;
+import com.cowaine.corock.chapter06.customer.ReturnRateRule;
 import com.cowaine.corock.chapter06.domain.Circle;
 import com.cowaine.corock.chapter06.domain.Rectangle;
 import com.cowaine.corock.chapter06.domain.Shape;
@@ -26,12 +30,14 @@ public class Book {
         // Book.pp101To103();
         // Book.pp103To104();
         // Book.pp109To115();
+        // Book.pp118To119();
 
-        Customer customer = new Customer();
-        PurchaseHistory purchaseHistory = new PurchaseHistory(500_000, 10, 0.001f);
+        ExcellentCustomerPolicy goldCustomerPolicy = new ExcellentCustomerPolicy();
+        goldCustomerPolicy.add(new GoldCustomerPurchaseAmountRule());
+        goldCustomerPolicy.add(new PurchaseFrequencyRule());
+        goldCustomerPolicy.add(new ReturnRateRule());
 
-        log.info("골드 회원 여부: {}", customer.isGoldCustomer(purchaseHistory));
-        log.info("실버 회원 여부: {}", customer.isSilverCustomer(purchaseHistory));
+        log.info("골드 회원 여부: {}", goldCustomerPolicy.complyWithAll(new PurchaseHistory(500_000, 10, 0.001f)));
     }
 
     private static void pp92To93() {
@@ -89,6 +95,14 @@ public class Book {
 
         // 마법 공격력 변경하기
         log.info("Member's magic attack: {}", member.magicAttack(MagicType.HELL_FIRE));
+    }
+
+    private static void pp118To119() {
+        Customer customer = new Customer();
+        PurchaseHistory purchaseHistory = new PurchaseHistory(500_000, 10, 0.001f);
+
+        log.info("골드 회원 여부: {}", customer.isGoldCustomer(purchaseHistory));
+        log.info("실버 회원 여부: {}", customer.isSilverCustomer(purchaseHistory));
     }
 
 }
