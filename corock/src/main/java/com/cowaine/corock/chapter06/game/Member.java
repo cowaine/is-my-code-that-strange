@@ -1,17 +1,23 @@
 package com.cowaine.corock.chapter06.game;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import java.util.Map;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Getter
 public class Member {
 
-    private final int hitPoint;
+    @Setter
+    private int hitPoint;
+
     private final int maxHitPoint;
-    private final int magicPoint;
+
+    @Setter
+    private int magicPoint;
+
     private final int technicalPoint;
     private final int level;
     private final int agility;
@@ -81,6 +87,10 @@ public class Member {
      */
     private int magicDamage(Magic magic) {
         return magic.attackPower().getValue();
+    }
+
+    public void addState(StateType stateType) {
+        // (...)
     }
 
 }

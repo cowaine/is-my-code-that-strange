@@ -40,13 +40,7 @@ public class Book {
         // Book.p121();
         // Book.pp122To123();
         // Book.p125();
-
-        HotelRates hotelRates = new RegularRates();
-
-        // 성수기 요금 자료형 판정 로직이 필요 없어진 상태
-        Money busySeasonFee = hotelRates.busySeasonFee();
-
-        log.info("busySeasonFee: {}", busySeasonFee.getAmount());
+        // Book.pp126To127();
     }
 
     private static void pp92To93() {
@@ -142,6 +136,15 @@ public class Book {
         } else if (hotelRates instanceof PremiumRates) {
             busySeasonFee = hotelRates.fee().add(new Money(50000));
         }
+
+        log.info("busySeasonFee: {}", busySeasonFee.getAmount());
+    }
+
+    private static void pp126To127() {
+        HotelRates hotelRates = new RegularRates();
+
+        // 성수기 요금 자료형 판정 로직이 필요 없어진 상태
+        Money busySeasonFee = hotelRates.busySeasonFee();
 
         log.info("busySeasonFee: {}", busySeasonFee.getAmount());
     }
