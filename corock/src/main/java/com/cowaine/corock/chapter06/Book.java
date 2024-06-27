@@ -18,6 +18,10 @@ import com.cowaine.corock.chapter06.game.Lightning;
 import com.cowaine.corock.chapter06.game.Magic;
 import com.cowaine.corock.chapter06.game.MagicType;
 import com.cowaine.corock.chapter06.game.Member;
+import com.cowaine.corock.chapter06.hotel.HotelRates;
+import com.cowaine.corock.chapter06.hotel.Money;
+import com.cowaine.corock.chapter06.hotel.PremiumRates;
+import com.cowaine.corock.chapter06.hotel.RegularRates;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Collections;
@@ -34,14 +38,18 @@ public class Book {
         // Book.pp109To115();
         // Book.pp118To119();
         // Book.p121();
+        // Book.pp122To123();
 
-        PurchaseHistory purchaseHistory = new PurchaseHistory(500_000, 10, 0.001f);
+        HotelRates hotelRates = new RegularRates();
 
-        GoldCustomerPolicy goldCustomerPolicy = new GoldCustomerPolicy();
-        SilverCustomerPolicy silverCustomerPolicy = new SilverCustomerPolicy();
+        Money busySeasonFee = null;
+        if (hotelRates instanceof RegularRates) {
+            busySeasonFee = hotelRates.fee().add(new Money(30000));
+        } else if (hotelRates instanceof PremiumRates) {
+            busySeasonFee = hotelRates.fee().add(new Money(50000));
+        }
 
-        log.info("골드 회원 여부: {}", goldCustomerPolicy.complyWithAll(purchaseHistory));
-        log.info("실버 회원 여부: {}", silverCustomerPolicy.complyWithAll(purchaseHistory));
+        log.info("busySeasonFee: {}", busySeasonFee.getAmount());
     }
 
     private static void pp92To93() {
@@ -116,6 +124,16 @@ public class Book {
         goldCustomerPolicy.add(new ReturnRateRule());
 
         log.info("골드 회원 여부: {}", goldCustomerPolicy.complyWithAll(new PurchaseHistory(500_000, 10, 0.001f)));
+    }
+
+    private static void pp122To123() {
+        PurchaseHistory purchaseHistory = new PurchaseHistory(500_000, 10, 0.001f);
+
+        GoldCustomerPolicy goldCustomerPolicy = new GoldCustomerPolicy();
+        SilverCustomerPolicy silverCustomerPolicy = new SilverCustomerPolicy();
+
+        log.info("골드 회원 여부: {}", goldCustomerPolicy.complyWithAll(purchaseHistory));
+        log.info("실버 회원 여부: {}", silverCustomerPolicy.complyWithAll(purchaseHistory));
     }
 
 }
