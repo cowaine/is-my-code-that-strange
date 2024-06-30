@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 public class Book {
 
     public static void main(String[] args) {
-        PhysicalAttack physicalAttack = new FighterPhysicalAttack();
+        PhysicalAttack physicalAttack = new FighterPhysicalAttack(new PhysicalAttack());
         log.info("damage: {}", physicalAttack.doubleAttackDamage());
     }
 
