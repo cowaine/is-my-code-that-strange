@@ -11,4 +11,9 @@ public class RegularDiscount extends DiscountBase {
         return discountedPrice;
     }
 
+    @Override
+    protected int discountCharge() {
+        return 4000;
+    }
+
 }
