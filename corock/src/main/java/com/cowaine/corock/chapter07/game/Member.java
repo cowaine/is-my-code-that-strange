@@ -12,6 +12,7 @@ public class Member {
     public int hitPoint;
 
     private final States states;
+    private final int id;
 
     public boolean containsState(StateType stateType) {
         return states.containsState(stateType);
@@ -31,6 +32,10 @@ public class Member {
 
     public double attack() {
         return 0.0;
+    }
+
+    public boolean isAlive() {
+        return false;
     }
 
 }
