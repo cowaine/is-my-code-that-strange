@@ -6,6 +6,7 @@ import java.util.List;
 public class SpecialEventManager {
 
     // 멤버를 추가합니다.
+    @Deprecated(forRemoval = true)
     void addMember(List<Member> members, Member newMember) {
         members.add(newMember);
     }

@@ -34,6 +34,7 @@ public class Member {
         return 0.0;
     }
 
+    @Deprecated(forRemoval = true)
     public boolean isAlive() {
         return false;
     }
