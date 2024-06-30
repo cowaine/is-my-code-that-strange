@@ -1,4 +1,4 @@
-package com.cowaine.sunset0.chpater3;
+package com.cowaine.sunset0.chapter3;
 
 
 import java.util.Currency;
