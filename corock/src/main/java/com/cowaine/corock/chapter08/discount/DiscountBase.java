@@ -10,11 +10,17 @@ public abstract class DiscountBase {
 
     // 할인 가격 반환
     int getDiscountPrice() {
-        int discountedPrice = price - 3000;
-        if (discountedPrice < 0) {
-            discountedPrice = 0;
+        if (this instanceof RegularDiscount) {
+            int discountedPrice = price - 4000;
+            if (discountedPrice < 0) {
+                discountedPrice = 0;
+            }
+            return discountedPrice;
+        } else if (this instanceof SummerDiscount) {
+            return (int) (price * (1.00 - 0.05));
         }
-        return discountedPrice;
+
+        throw new RuntimeException();
     }
 
     // 할인 금액
