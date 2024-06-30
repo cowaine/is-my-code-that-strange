@@ -13,11 +13,15 @@ public class Party {
 
     private final List<Member> members;
 
-    Party() {
+    public Party() {
         this.members = new ArrayList<>();
     }
 
     // (...)
+
+    public List<Member> members() {
+        return members;
+    }
 
     /**
      * 멤버를 추가한다.
