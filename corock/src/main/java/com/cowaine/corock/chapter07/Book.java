@@ -15,7 +15,16 @@ public class Book {
 
     public static void main(String[] args) {
         // Book.p134();
+        // Book.pp144To145();
+    }
 
+    private static void p134() {
+        Character corock = new Character(List.of(new Item("감옥 열쇠")));
+
+        log.info("감옥 열쇠 보유 여부: {}", corock.hasPrisonKey());
+    }
+
+    private static void pp144To145() {
         List<Member> members;
         Party party = new Party();
         Member newMember = new Member(100, new States(List.of(StateType.ALIVE)), 1);
@@ -30,12 +39,6 @@ public class Book {
         members.clear();
 
         log.info("members: {}", members);
-    }
-
-    private static void p134() {
-        Character corock = new Character(List.of(new Item("감옥 열쇠")));
-
-        log.info("감옥 열쇠 보유 여부: {}", corock.hasPrisonKey());
     }
 
 }

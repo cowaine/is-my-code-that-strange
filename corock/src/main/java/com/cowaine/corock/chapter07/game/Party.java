@@ -51,7 +51,7 @@ public class Party {
      * @return 파티 멤버가 1명이라도 살아 있으면 true 반환
      */
     boolean isAlive() {
-        return members.stream().anyMatch(each -> each.isAlive());
+        return members.stream().anyMatch(Member::isAlive);
     }
 
     /**
