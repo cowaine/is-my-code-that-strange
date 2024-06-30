@@ -1,13 +1,18 @@
 package com.cowaine.corock.chapter08.discount;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @RequiredArgsConstructor
+@Getter
 public class DiscountManager {
 
     private final List<Product> discountProducts;
+
+    @Setter
     private int totalPrice;
 
     /**
@@ -64,7 +69,7 @@ public class DiscountManager {
      * @param price 상품 가격
      * @return 할인 가격
      */
-    private int getDiscountPrice(int price) {
+    public int getDiscountPrice(int price) {
         int discountPrice = price - 3000;
         if (discountPrice < 0) {
             discountPrice = 0;
