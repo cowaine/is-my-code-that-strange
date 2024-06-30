@@ -25,4 +25,12 @@ public class Member {
         boolean removed = states.remove(stateType);
     }
 
+    public boolean hasTeamAttackSucceeded() {
+        return false;
+    }
+
+    public double attack() {
+        return 0.0;
+    }
+
 }
