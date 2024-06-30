@@ -57,16 +57,17 @@ public class MemberService {
 
         // FIXME: Reduce the total number of break and continue statements in this loop to use at most one.
         for (Member member : members) {
-            if (member.hasTeamAttackSucceeded()) {
-                int damage = (int) (member.attack() * 1.1);
-                if (30 <= damage) {
-                    totalDamage += damage;
-                } else {
-                    break;
-                }
-            } else {
+            if (!member.hasTeamAttackSucceeded()) {
                 break;
             }
+
+            int damage = (int) (member.attack() * 1.1);
+
+            if (damage < 30) {
+                break;
+            }
+
+            totalDamage += damage;
         }
     }
 
