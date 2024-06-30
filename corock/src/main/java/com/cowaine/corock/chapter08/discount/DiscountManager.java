@@ -68,9 +68,10 @@ public class DiscountManager {
      *
      * @param price 상품 가격
      * @return 할인 가격
+     * @implNote 일반 할인 가격이 3,000 원에서 4,000 원으로 변경되었다.
      */
     public int getDiscountPrice(int price) {
-        int discountPrice = price - 3000;
+        int discountPrice = price - 4000;
         if (discountPrice < 0) {
             discountPrice = 0;
         }

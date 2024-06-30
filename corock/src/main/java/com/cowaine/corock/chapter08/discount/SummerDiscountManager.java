@@ -33,6 +33,8 @@ public class SummerDiscountManager {
      * </ul>
      */
     boolean add(Product product) {
+        // TODO: SummerDiscountManager.add 메서드에 가격 확인 로직이 없어서 음수 가격의 상품을 여름 할인에 추가할 수 있게 됨.
+
         if (product.getId() < 0) {
             throw new IllegalArgumentException();
         }
@@ -41,6 +43,11 @@ public class SummerDiscountManager {
         }
 
         int tmp;
+
+        /*
+         * 할인 대상 상품으로 설정했는데, 할인이 되지 않음.
+         * ProductDiscount.canDiscount 와 Product.canDiscount 를 서로 헷갈려서 잘못 사용했음.
+         */
         if (product.canDiscount()) {
             tmp = discountManager.getTotalPrice() + discountManager.getDiscountPrice(product.getPrice());
         } else {
