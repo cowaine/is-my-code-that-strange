@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
  *     <li>최대 300,000원까지 상품 추가 가능</li>
  * </ul>
  */
+@Deprecated(forRemoval = true)
 @RequiredArgsConstructor
 public class SummerDiscountManager {
 
@@ -32,6 +33,7 @@ public class SummerDiscountManager {
      *     <li>가격 총합이 상한가인 300,000원 이내인 경우, 상품 리스트에 추가합니다.</li>
      * </ul>
      */
+    @Deprecated(forRemoval = true)
     boolean add(Product product) {
         // TODO: SummerDiscountManager.add 메서드에 가격 확인 로직이 없어서 음수 가격의 상품을 여름 할인에 추가할 수 있게 됨.
 

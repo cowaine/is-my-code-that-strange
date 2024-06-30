@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.util.List;
 
+@Deprecated(forRemoval = true)
 @RequiredArgsConstructor
 @Getter
 public class DiscountManager {
@@ -32,6 +33,7 @@ public class DiscountManager {
      *     <li>가격 총합이 상한가인 200,000원 이내인 경우, 상품 리스트에 추가한다.</li>
      * </ul>
      */
+    @Deprecated(forRemoval = true)
     boolean add(Product product, ProductDiscount productDiscount) {
         if (product.getId() < 0) {
             throw new IllegalArgumentException();
@@ -70,6 +72,7 @@ public class DiscountManager {
      * @return 할인 가격
      * @implNote 일반 할인 가격이 3,000 원에서 4,000 원으로 변경되었다.
      */
+    @Deprecated(forRemoval = true)
     public int getDiscountPrice(int price) {
         int discountPrice = price - 4000;
         if (discountPrice < 0) {
