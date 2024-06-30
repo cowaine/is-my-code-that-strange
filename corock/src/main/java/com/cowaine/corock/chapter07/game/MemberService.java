@@ -1,12 +1,10 @@
 package com.cowaine.corock.chapter07.game;
 
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
 @RequiredArgsConstructor
-@Getter
 public class MemberService {
 
     private final List<Member> members;

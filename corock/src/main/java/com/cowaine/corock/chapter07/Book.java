@@ -10,9 +10,13 @@ import java.util.List;
 public class Book {
 
     public static void main(String[] args) {
+        // Book.p134();
+    }
+
+    private static void p134() {
         Character corock = new Character(List.of(new Item("감옥 열쇠")));
 
-        log.info("{}", corock.hasPrisonKey());
+        log.info("감옥 열쇠 보유 여부: {}", corock.hasPrisonKey());
     }
 
 }
