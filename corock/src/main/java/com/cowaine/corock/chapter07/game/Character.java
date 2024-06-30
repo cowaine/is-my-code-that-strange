@@ -10,17 +10,7 @@ public class Character {
     private final List<Item> items;
 
     public boolean hasPrisonKey() {
-        boolean hasPrisonKey = false;
-
-        // items 는 List<Item> 자료형
-        for (Item each : items) {
-            if (each.getName().equals("감옥 열쇠")) {
-                hasPrisonKey = true;
-                break;
-            }
-        }
-
-        return hasPrisonKey;
+        return items.stream().anyMatch(item -> item.getName().equals("감옥 열쇠"));
     }
 
 }
