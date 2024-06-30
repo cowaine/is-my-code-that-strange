@@ -1,14 +1,14 @@
 package com.cowaine.corock.chapter08.rpg.view;
 
 import com.cowaine.corock.chapter08.rpg.objects.Member;
-import com.cowaine.corock.chapter08.rpg.objects.PositiveFeelings;
+// import com.cowaine.corock.chapter08.rpg.objects.PositiveFeelings;
 
 /**
  * 전투 화면
  */
 public class BattleView {
 
-    private PositiveFeelings positiveFeelings;
+    // private PositiveFeelings positiveFeelings;
 
     // (...)
 
@@ -18,7 +18,7 @@ public class BattleView {
 
         // (...)
 
-        positiveFeelings.increase(member1.getId(), member2.getId());
+        // positiveFeelings.increase(member1.getId(), member2.getId());
     }
 
 }
