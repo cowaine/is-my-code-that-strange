@@ -38,6 +38,10 @@
       - 기본 자료형에 집착을 하면 코드 중복이 쉽게 발생할 수 있다.(ex .유효성 검사)
       - 기본 자료형에 집착을 하면 데이터를 사용한 계산과 제어 로직이 모두 분산된다.(응집도가 낮아짐)
     - 메서드 체인(`/bad_code/NoDemeter.java`)
+  6. 나쁜 조건 분기
+     - 중첩된 조건 분기(`/bad_code/BadIf.java`)
+     - 반복되는 스위치문(`/bad_code/MagicManager.java`)
+     - 플래그 매개변수(`/bad_code/Flag.java`)
 
 - `Good`
   1. 좋은 이름 & 그룹화(`/good_code/Naming.java`)
@@ -87,6 +91,13 @@
        - 사용하는 객체 내부를 알아서는 안 된다.
        - Tell Don't Ask : 다른 객체의 내부 상태를 기반으로 판단하거나 제어하려고 하지말고, 메서드로 명령해서 객체가 알아서 판단고 제어하도록 설계하라.
        - 사용할 객체에게 "메시지"를 보낸다.
+  5. 좋은 조건 분기
+      - 조기 리턴(`/good_code/GoodIf.java`)
+      - switch -> 전략패턴으로 대체(`/good_codee/MagicManager.java`)
+      - 정책 패턴(`/bad_code/MembershipManager.java` -> `/good_code/GoldCustomerPolicy.java`)
+      - 리스코프 치환원칙(`/bad_code/RegularRates.java` -> `/good_code/RegularRates.java`)
+      - 조건 분기를 써야하는 상황에는 일단 인터페이스 설계를 떠올리자를 머리속에 새겨 두기만 해도 조건 분기 처리를 대하는 방식 자체가 달라진다.
+      - 메서드 분리(`/good_code/SeparateMethod.java`)
 
 # Anti Pattern
 - 쓰레기 객체(`TrashObject.java`)

@@ -1,6 +1,7 @@
 package com.cowaine.firewoody237.good_code;
 
 import java.util.Currency;
+import java.util.Locale;
 
 public class Money {
     // 불변 변수를 활용 해 사이드이펙트를 줄인다.
@@ -20,6 +21,11 @@ public class Money {
 
         this.amount = amount;
         this.currency = currency;
+    }
+
+    public Money(int amount) {
+        this.amount = amount;
+        currency = Currency.getInstance(Locale.KOREA);
     }
 
     // 계산로직을 클래스 내부에 두어 '응집도'를 높인다.
