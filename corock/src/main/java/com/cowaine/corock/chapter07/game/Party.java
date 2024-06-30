@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class Party {
@@ -19,8 +20,11 @@ public class Party {
 
     // (...)
 
+    /**
+     * @return 멤버 목록(다만 요소를 외부에서 변경할 수 없습니다.)
+     */
     public List<Member> members() {
-        return members;
+        return members.stream().collect(Collectors.toUnmodifiableList());
     }
 
     /**
