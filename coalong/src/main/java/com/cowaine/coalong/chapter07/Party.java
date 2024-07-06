@@ -6,11 +6,13 @@ import java.util.List;
 public class Party {
     private final List<Member> members;
 
-    Party() {
-        members = new ArrayList<Member>();
+    Party(List<Member> newMembers) {
+        members = new ArrayList<Member>(newMembers);
     }
 
-    void add(final Member member) {
-        members.add(member);
+    Party add(final Member newMember) {
+        List<Member> adding = new ArrayList<>(members);
+        adding.add(newMember);
+        return new Party(adding);
     }
 }
