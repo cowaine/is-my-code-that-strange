@@ -37,7 +37,7 @@ public class 이미_존재하는_기능을_다시_구현하지_말기 {
         for (Member member : members) {
             if (0 < member.getHp()) {
                 if (member.getState() == MemberState.PRISON) {
-                    member = member.damageHp( 10);
+                    member = member.damageHp(10);
 
                     if (member.getHp() <= 0) {
                         member.damageHp(member.getHp());
@@ -57,13 +57,33 @@ public class 이미_존재하는_기능을_다시_구현하지_말기 {
             }
 
             if (member.getState() == MemberState.PRISON) {
-                member = member.damageHp( 10);
+                member = member.damageHp(10);
 
                 if (member.getHp() <= 0) {
                     member.damageHp(member.getHp());
                     member.changeState(MemberState.DIE);
                 }
             }
+        }
+
+        // 7.1.5 if 조건문의 중첩을 모두 제거한 상태
+        for (Member member : members) {
+            if (member.getHp() == 0) {
+                continue;
+            }
+
+            if (member.getState() != MemberState.PRISON) {
+                continue;
+            }
+
+            member.damageHp(10);
+
+            if (0 < member.getHp()) {
+                continue;
+            }
+
+            member.damageHp(member.getHp());
+            member.changeState(MemberState.DIE);
         }
     }
 }
