@@ -25,4 +25,22 @@ public class Chap7 {
             member.removeState(StateType.poison);
         }
     }
+
+    void comboAttackDamage(List<Member> members){
+        int totalDamage = 0;
+        for (Member member : members) {
+            if (member.hasTeamAttackSucceeded()) {
+                int damage = (int) (member.attack() * 1.1);
+                if (30 <= damage) {
+                    totalDamage += damage;
+                }
+                else {
+                    break;
+                }
+            }
+            else {
+                break;
+            }
+        }
+    }
 }

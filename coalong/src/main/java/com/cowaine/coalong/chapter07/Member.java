@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Member {
     public int hitPoint;
+    public int attackDamage;
     public List<StateType> stateTypeList;
 
     public boolean containsState(StateType stateType) {
@@ -16,5 +17,13 @@ public class Member {
 
     public void removeState(StateType stateType) {
         stateTypeList.remove(stateType);
+    }
+
+    public boolean hasTeamAttackSucceeded() {
+        return false;
+    }
+
+    public int attack() {
+        return attackDamage;
     }
 }
