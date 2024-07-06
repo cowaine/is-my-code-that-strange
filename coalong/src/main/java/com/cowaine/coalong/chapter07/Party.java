@@ -2,6 +2,7 @@ package com.cowaine.coalong.chapter07;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Party {
     static final int MAX_MEMBER_COUNT = 4;
@@ -53,5 +54,12 @@ public class Party {
      */
     boolean isFull() {
         return members.size() >= MAX_MEMBER_COUNT;
+    }
+
+    /**
+     * @return 멤버 리스트(다만 요소를 외부에서 변경할 수 없습니다.)
+     */
+    List<Member> members() {
+        return members.stream().collect(Collectors.toUnmodifiableList());
     }
 }
