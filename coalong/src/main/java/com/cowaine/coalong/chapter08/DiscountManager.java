@@ -49,7 +49,7 @@ public class DiscountManager {
      * @param price 상품 가격
      * @return 할인 가격
      */
-    private int getDiscountPrice(int price) {
+    static int getDiscountPrice(int price) {
         int discountPrice = price - 3000;
         if (discountPrice < 0) {
             discountPrice = 0;
