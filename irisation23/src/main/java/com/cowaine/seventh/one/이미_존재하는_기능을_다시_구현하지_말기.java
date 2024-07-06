@@ -46,5 +46,24 @@ public class 이미_존재하는_기능을_다시_구현하지_말기 {
                 }
             }
         }
+
+        // 7.1.4 조기 컨티뉴로 중첩 제거하기
+        for (Member member : members) {
+            // 살아 있지 않다면 continue로 다음 반복으로 넘어감.
+            // 조기 continue로 변경하려면 조건을 반전해야 함.
+
+            if (member.getHp() == 0) {
+                continue;
+            }
+
+            if (member.getState() == MemberState.PRISON) {
+                member = member.damageHp( 10);
+
+                if (member.getHp() <= 0) {
+                    member.damageHp(member.getHp());
+                    member.changeState(MemberState.DIE);
+                }
+            }
+        }
     }
 }
