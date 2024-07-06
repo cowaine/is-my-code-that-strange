@@ -6,6 +6,7 @@ public class Member {
     public int hitPoint;
     public int attackDamage;
     public List<StateType> stateTypeList;
+    public int id;
 
     public boolean containsState(StateType stateType) {
         return stateTypeList.stream().anyMatch(state -> state.equals(stateType));
@@ -25,5 +26,9 @@ public class Member {
 
     public int attack() {
         return attackDamage;
+    }
+
+    public boolean isAlive() {
+        return hitPoint > 0;
     }
 }
