@@ -32,4 +32,12 @@ public class Member {
 
     public void inchant(Magic magic) {
     }
+
+    public Member damageHp(int damage) {
+        return new Member(this.pk, this.state, this.getHp() - damage, this.mp, this.lv, this.agility);
+    }
+
+    public Member changeState(MemberState memberState) {
+        return new Member(this.pk, memberState, this.hp, this.mp, this.lv, this.agility);
+    }
 }
