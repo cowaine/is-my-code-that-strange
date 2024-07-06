@@ -20,7 +20,7 @@ public class Member {
     }
 
     public boolean hasTeamAttackSucceeded() {
-        return false;
+        return true;
     }
 
     public int attack() {

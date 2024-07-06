@@ -3,6 +3,7 @@ package com.cowaine.coalong.chapter07;
 import java.util.List;
 
 public class Chap7 {
+
     boolean hasPrisonKey(List<Item> items) {
         return items.stream().anyMatch(
                 item -> item.name.equals("감옥 열쇠")
@@ -26,21 +27,18 @@ public class Chap7 {
         }
     }
 
-    void comboAttackDamage(List<Member> members){
+    static int comboAttackDamage(List<Member> members) {
         int totalDamage = 0;
         for (Member member : members) {
-            if (member.hasTeamAttackSucceeded()) {
-                int damage = (int) (member.attack() * 1.1);
-                if (30 <= damage) {
-                    totalDamage += damage;
-                }
-                else {
-                    break;
-                }
-            }
-            else {
-                break;
-            }
+            if (!member.hasTeamAttackSucceeded()) break;
+
+            int damage = (int) (member.attack() * 1.1);
+
+            if (damage < 30) break;
+
+            totalDamage += damage;
         }
+
+        return totalDamage;
     }
 }
