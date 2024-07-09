@@ -6,11 +6,11 @@ public class RpgGame {
         // 조기 리턴으로 변경하기 위해 조건을 반전했습니다.
         if (member.hitPoint <= 0) return;
         if (!member.canAct()) return;
-        if (member.magicPoint < magic.costMaicPoint) return;
-        if (member.technicalPoint < magic.costMaicPoint) return;
+        if (member.magicPoint < magic.costMagicPoint()) return;
+        if (member.technicalPoint < magic.costMagicPoint()) return;
 
-        member.consumeMagicPoint(magic.costMaicPoint);
+        member.consumeMagicPoint(magic.costMagicPoint());
         member.chant(magic);
-        member.gainTechnicalPoint(magic.incrementTechnicalPoint);
+        member.gainTechnicalPoint(magic.costTechnicalPoint());
     }
 }
