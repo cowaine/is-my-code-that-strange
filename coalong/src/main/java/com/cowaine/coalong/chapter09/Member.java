@@ -16,4 +16,10 @@ public class Member {
         total += arm.getDefence();
         return total;
     }
+
+    void takeOffAllEquipment() {
+        head = null;
+        body = null;
+        arm = null;
+    }
 }
