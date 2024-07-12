@@ -1,5 +1,6 @@
 package com.cowaine.coalong.chapter09;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
 public class Example {
@@ -15,6 +16,17 @@ public class Example {
         field.setInt(level, 999);
 
         System.out.println("Level : " + level.value);
+    }
+
+    void show9dot20() throws Exception {
+        User user = (User) generateInstance("customer", "User");
+    }
+
+    static Object generateInstance(String packageName, String className) throws Exception {
+        String fillName = packageName + "." + className;
+        Class klass = Class.forName(fillName);
+        Constructor constructor = klass.getDeclaredConstructor();
+        return constructor.newInstance();
     }
 
 }
