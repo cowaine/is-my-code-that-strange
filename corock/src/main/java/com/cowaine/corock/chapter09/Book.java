@@ -12,18 +12,13 @@ import java.lang.reflect.InvocationTargetException;
 @Slf4j
 public class Book {
 
-    public static void main(String[] args) throws IllegalAccessException, ClassNotFoundException,
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, ClassNotFoundException,
             InvocationTargetException, NoSuchMethodException, InstantiationException {
 
-        // Book.p191();
-        // Book.pp194To197();
-        // Book.p201();
-
-        String packageName = "com.cowaine.corock.chapter09.customer";
-        String className = "User";
-        Customer customer = (Customer) generateInstance(packageName, className);
-
-        log.info("User: {}", customer);
+        Book.p191();
+        Book.pp194To197();
+        Book.p201();
+        Book.pp202To203();
     }
 
     private static void p191() {
@@ -45,6 +40,14 @@ public class Book {
         field.setInt(level, 999);
 
         log.info("Level: {}", level.getValue());
+    }
+
+    private static void pp202To203() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        String packageName = "com.cowaine.corock.chapter09.customer";
+        String className = "Customer";
+        Customer customer = (Customer) generateInstance(packageName, className);
+
+        log.info("Customer: {}", customer);
     }
 
     /**
