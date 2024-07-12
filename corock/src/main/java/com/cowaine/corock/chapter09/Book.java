@@ -1,6 +1,6 @@
 package com.cowaine.corock.chapter09;
 
-import com.cowaine.corock.chapter09.customer.User;
+import com.cowaine.corock.chapter09.customer.Customer;
 import com.cowaine.corock.chapter09.game.Level;
 import com.cowaine.corock.chapter09.game.Member;
 import lombok.extern.slf4j.Slf4j;
@@ -21,9 +21,9 @@ public class Book {
 
         String packageName = "com.cowaine.corock.chapter09.customer";
         String className = "User";
-        User user = (User) generateInstance(packageName, className);
+        Customer customer = (Customer) generateInstance(packageName, className);
 
-        log.info("User: {}", user);
+        log.info("User: {}", customer);
     }
 
     private static void p191() {
