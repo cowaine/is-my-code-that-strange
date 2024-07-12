@@ -4,6 +4,13 @@ public class Member {
 
     private int level;
 
+    private Equipment head;
+    private Equipment body;
+    private Equipment arm;
+    private int defense;
+
+    // (...)
+
     void init() {
         if (level > 99) {
             level = 99;
@@ -34,6 +41,16 @@ public class Member {
 
     private void addSpecialAbility() {
         // (...)
+    }
+
+    // 방어구의 방어력과 캐릭터의 방어력을 합산해서 반환
+    int totalDefense() {
+        int total = defense;
+        total += head.getDefense();
+        total += body.getDefense();
+        total += arm.getDefense();
+
+        return total;
     }
 
 }
