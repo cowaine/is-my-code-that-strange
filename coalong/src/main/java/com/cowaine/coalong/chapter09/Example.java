@@ -19,7 +19,7 @@ public class Example {
     }
 
     void show9dot20() throws Exception {
-        User user = (User) generateInstance("customer", "User");
+        Employer user = (Employer) generateInstance("customer", "User");
     }
 
     static Object generateInstance(String packageName, String className) throws Exception {
