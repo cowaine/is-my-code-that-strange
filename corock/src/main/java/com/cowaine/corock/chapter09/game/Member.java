@@ -74,9 +74,11 @@ public class Member {
 
     // 방어구 출력하기
     public void showBodyEquipment() {
-        showParam(body.getName());
-        showParam(String.valueOf(body.getDefense()));
-        showParam(String.valueOf(body.getMagicDefense()));
+        if (body != null) {
+            showParam(body.getName());
+            showParam(String.valueOf(body.getDefense()));
+            showParam(String.valueOf(body.getMagicDefense()));
+        }
     }
 
     private void showParam(String param) {
