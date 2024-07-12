@@ -8,7 +8,14 @@ public class Member {
     private Equipment head;
     private Equipment body;
     private Equipment arm;
-    private int defense;
+    private final int defense;
+
+    public Member() {
+        this.head = Equipment.HEAD;
+        this.body = Equipment.BODY;
+        this.arm = Equipment.ARM;
+        this.defense = 0;
+    }
 
     // 방어구의 방어력과 캐릭터의 방어력을 합산해서 리턴
     int totalDefense() {
@@ -27,9 +34,9 @@ public class Member {
 
     // 장착하지 않은 상태를 null 로 표현하기
     void takeOffAllEquipment() {
-        head = null;
-        body = null;
-        arm = null;
+        this.head = Equipment.EMPTY;
+        this.body = Equipment.EMPTY;
+        this.arm = Equipment.EMPTY;
     }
 
     // 방어구 출력하기
