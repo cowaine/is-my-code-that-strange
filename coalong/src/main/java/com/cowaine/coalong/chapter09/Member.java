@@ -1,7 +1,9 @@
 package com.cowaine.coalong.chapter09;
 
 import com.cowaine.coalong.chapter05.game.Equipment;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class Member {
     private Equipment head;
     private Equipment body;
@@ -28,5 +30,18 @@ public class Member {
         head = null;
         body = null;
         arm = null;
+    }
+
+    // 방어구 출력하기
+    void showBodyEquipments() {
+        if (body != null) {
+            showParam(body.getName());
+            showParam(arm.getDefence());
+            showParam(head.getMagicDefence());
+        }
+    }
+
+    private void showParam(Object equipment) {
+        log.info((String) equipment);
     }
 }
