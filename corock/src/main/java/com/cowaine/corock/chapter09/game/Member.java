@@ -67,9 +67,9 @@ public class Member {
 
     // 모든 방어구 장비 해제
     void takeOffAllEquipments() {
-        head = null;
-        body = null;
-        arm = null;
+        head = Equipment.EMPTY;
+        body = Equipment.EMPTY;
+        arm = Equipment.EMPTY;
     }
 
     // 방어구 출력하기
