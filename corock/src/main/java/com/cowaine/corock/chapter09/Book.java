@@ -1,9 +1,14 @@
 package com.cowaine.corock.chapter09;
 
+import com.cowaine.corock.chapter09.game.Member;
+
 public class Book {
 
     public static void main(String[] args) {
         // Book.p191();
+
+        Member member = new Member();
+        member.showBodyEquipment();
     }
 
     private static void p191() {

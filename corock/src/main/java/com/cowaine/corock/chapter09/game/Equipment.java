@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public class Equipment {
 
+    private final String name;
     private final int defense;
+    private final int magicDefense;
 
 }
