@@ -19,4 +19,9 @@ class MemberManager {
         // (...)
     }
 
+    // 멤버의 능력치를 CSV 형식으로 내보내기
+    void exportParamsToCsv() {
+        // (...)
+    }
+
 }
