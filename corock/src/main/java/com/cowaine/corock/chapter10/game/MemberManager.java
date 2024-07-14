@@ -24,4 +24,15 @@ class MemberManager {
         // (...)
     }
 
+    // 적이 생존해 있는지 확인하기
+    boolean enemyIsAlive(int enemyId) {
+        // (...)
+        return false;
+    }
+
+    // BGM 재생하기
+    void playBgm(String bgmName) {
+        // (...)
+    }
+
 }
