@@ -26,10 +26,7 @@ public class Book {
         // Book.p230();
         // Book.p232();
         // Book.pp232To233();
-
-        Order order = new Order(new OrderId(), new Items(), new GiftPoint(0));
-        int count = order.itemCount();
-        log.info("Order count: {}, and gift point: {}", count, order.getGiftPoint());
+        // Book.pp233To234();
     }
 
     private static void pp221To222() {
@@ -90,6 +87,12 @@ public class Book {
         Member member = new Member(100, 90, 50, new States());
 
         log.info("Can you enchant? {}", magic.canEnchant(member));
+    }
+
+    private static void pp233To234() {
+        Order order = new Order(new OrderId(), new Items(), new GiftPoint(0));
+        int count = order.itemCount();
+        log.info("Order count: {}, and gift point: {}", count, order.getGiftPoint());
     }
 
 }
