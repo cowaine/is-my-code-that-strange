@@ -37,6 +37,7 @@ public class Book {
         int LRF = 100;
         int dod = 18;
 
+        // 렌탈 요금 총액 = 기본 요금 + 연체료 * 연체 일
         int trFee = brFee + LRF * dod;
         log.info("렌탈 요금 총액: {}", trFee);
     }
