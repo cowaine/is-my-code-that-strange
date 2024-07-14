@@ -9,4 +9,12 @@ public class Member {
 
     private final int maxHitPoint;
 
+    private final int hitPoint;
+    private final int magicPoint;
+    private final States states;
+
+    public boolean canAct() {
+        return hitPoint > 0;
+    }
+
 }

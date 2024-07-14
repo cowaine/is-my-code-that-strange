@@ -6,8 +6,10 @@ import com.cowaine.corock.chapter10.amount.ServiceUsageFee;
 import com.cowaine.corock.chapter10.game.Accessory;
 import com.cowaine.corock.chapter10.game.Armor;
 import com.cowaine.corock.chapter10.game.CorrectedMaxHitPoint;
+import com.cowaine.corock.chapter10.game.Magic;
 import com.cowaine.corock.chapter10.game.Member;
 import com.cowaine.corock.chapter10.game.OriginalMaxHitPoint;
+import com.cowaine.corock.chapter10.game.States;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -17,8 +19,12 @@ public class Book {
         // Book.pp221To222();
         // Book.pp226To227();
         // Book.pp228To229();
+        // Book.p230();
 
-        log.info("What is this? {}", Book.p230());
+        Magic magic = new Magic(20);
+        Member member = new Member(100, 90, 50, new States());
+
+        log.info("Can you enchant? {}", magic.isMemberHpMoreThanZeroAndIsMemberCanActAndIsMemberMpMoreThanMagicCostMp(member));
     }
 
     private static void pp221To222() {
@@ -28,7 +34,7 @@ public class Book {
     }
 
     private static void pp226To227() {
-        Member member = new Member(85);
+        Member member = new Member(100, 85, 70, new States());
         Accessory accessory = new Accessory();
 
         int maxHitPoint = member.getMaxHitPoint() + accessory.maxHitPointIncrements();
