@@ -10,6 +10,10 @@ import com.cowaine.corock.chapter10.game.Magic;
 import com.cowaine.corock.chapter10.game.Member;
 import com.cowaine.corock.chapter10.game.OriginalMaxHitPoint;
 import com.cowaine.corock.chapter10.game.States;
+import com.cowaine.corock.chapter10.order.GiftPoint;
+import com.cowaine.corock.chapter10.order.Items;
+import com.cowaine.corock.chapter10.order.Order;
+import com.cowaine.corock.chapter10.order.OrderId;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -21,11 +25,11 @@ public class Book {
         // Book.pp228To229();
         // Book.p230();
         // Book.p232();
+        // Book.pp232To233();
 
-        Magic magic = new Magic(20);
-        Member member = new Member(100, 90, 50, new States());
-
-        log.info("Can you enchant? {}", magic.canEnchant(member));
+        Order order = new Order(new OrderId(), new Items(), new GiftPoint(0));
+        int count = order.itemCount();
+        log.info("Order count: {}, and gift point: {}", count, order.getGiftPoint());
     }
 
     private static void pp221To222() {
@@ -79,6 +83,13 @@ public class Book {
 
         log.info("Can you enchant? {}",
                 magic.isMemberHpMoreThanZeroAndIsMemberCanActAndIsMemberMpMoreThanMagicCostMp(member));
+    }
+
+    private static void pp232To233() {
+        Magic magic = new Magic(20);
+        Member member = new Member(100, 90, 50, new States());
+
+        log.info("Can you enchant? {}", magic.canEnchant(member));
     }
 
 }
