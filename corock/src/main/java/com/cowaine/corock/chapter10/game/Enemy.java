@@ -2,18 +2,24 @@ package com.cowaine.corock.chapter10.game;
 
 import java.util.List;
 
-class Enemy {
+public class Enemy {
 
-    boolean isAppeared;
-    int magicPoint;
-    Item dropItem;
+    private boolean isAppeared;
+    private int magicPoint;
+    private Item dropItem;
 
-    // 도망치기
+    /**
+     * 도망친다.
+     */
     void escape() {
-        isAppeared = false;
+        this.isAppeared = false;
     }
 
-    // 매직 포인트 소비
+    /**
+     * 매직 포인트를 소비한다.
+     *
+     * @param costMagicPoint 매직 포인트 소비량
+     */
     void consumeMagicPoint(int costMagicPoint) {
         this.magicPoint -= costMagicPoint;
         if (magicPoint < 0) {
@@ -21,8 +27,13 @@ class Enemy {
         }
     }
 
-    // 주인공 파티에 아이템 추가하기
-    // 추가할 수 있다면 true 를 반환
+    /**
+     * 주인공 파티에 아이템을 추가한다.
+     *
+     * @param items 아이템 목록
+     * @return 아이템을 추가할 수 있으면 true
+     */
+    @Deprecated(forRemoval = true)
     boolean addItemToParty(List<Item> items) {
         if (items.size() < 99) {
             items.add(dropItem);
