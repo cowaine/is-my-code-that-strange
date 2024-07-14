@@ -15,6 +15,7 @@ import com.cowaine.corock.chapter10.order.GiftPoint;
 import com.cowaine.corock.chapter10.order.Items;
 import com.cowaine.corock.chapter10.order.Order;
 import com.cowaine.corock.chapter10.order.OrderId;
+import com.cowaine.corock.chapter10.rental.RentalFee;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Collections;
@@ -33,13 +34,8 @@ public class Book {
         // Book.pp233To234();
         // Book.pp247To249();
 
-        int basicRentalFee = 26_000;
-        int LATE_RENTAL_FEE_PER_DAY = 100;
-        int daysOverDue = 18;
-
-        // 렌탈 요금 총액 = 기본 요금 + 연체료 * 연체 일
-        int trFee = basicRentalFee + LATE_RENTAL_FEE_PER_DAY * daysOverDue;
-        log.info("렌탈 요금 총액: {}", trFee);
+        RentalFee rentalFee = new RentalFee(26_000, 18);
+        log.info("렌탈 요금 총액: {}", rentalFee.getTotalRentalFee());
     }
 
     private static void pp221To222() {
