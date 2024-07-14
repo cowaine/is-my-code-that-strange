@@ -14,4 +14,9 @@ class MemberManager {
         return 0;
     }
 
+    // 멤버 보행 애니메이션 시작하기
+    void startWalkAnimation(int memberId) {
+        // (...)
+    }
+
 }
