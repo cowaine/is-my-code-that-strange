@@ -16,14 +16,9 @@ public class Book {
     public static void main(String[] args) {
         // Book.pp221To222();
         // Book.pp226To227();
+        // Book.pp228To229();
 
-        OriginalMaxHitPoint originalMaxHitPoint = new OriginalMaxHitPoint(85);
-        log.info("original max HP: {}", originalMaxHitPoint);
-
-        Accessory accessory = new Accessory();
-        Armor armor = new Armor();
-        CorrectedMaxHitPoint correctedMaxHitPoint = new CorrectedMaxHitPoint(originalMaxHitPoint, accessory, armor);
-        log.info("corrected max HP: {}", correctedMaxHitPoint);
+        log.info("What is this? {}", Book.p230());
     }
 
     private static void pp221To222() {
@@ -45,6 +40,30 @@ public class Book {
 
         maxHitPoint = member.getMaxHitPoint() + accessory.maxHitPointIncrements() + armor.maxHitPointIncrements();
         log.info("Max HP: {} (o)", maxHitPoint);
+    }
+
+    private static void pp228To229() {
+        OriginalMaxHitPoint originalMaxHitPoint = new OriginalMaxHitPoint(85);
+        log.info("original max HP: {}", originalMaxHitPoint);
+
+        Accessory accessory = new Accessory();
+        Armor armor = new Armor();
+        CorrectedMaxHitPoint correctedMaxHitPoint = new CorrectedMaxHitPoint(originalMaxHitPoint, accessory, armor);
+        log.info("corrected max HP: {}", correctedMaxHitPoint);
+    }
+
+    private static int p230() {
+        int tmp1 = 1;
+        int tmp2 = 2;
+        int tmp4 = 3;
+        int tmp6 = 4;
+
+        int tmp3 = tmp1 - tmp2;
+        if (tmp3 < tmp4) {
+            tmp3 = tmp4;
+        }
+        int tmp5 = tmp3 * tmp6;
+        return tmp5;
     }
 
 }
