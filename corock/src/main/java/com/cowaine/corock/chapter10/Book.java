@@ -34,7 +34,7 @@ public class Book {
         // Book.pp233To234();
 
         Member member = new Member(999, 500, 200, new States(List.of(StateType.CONFUSED)));
-        log.info("Is Member in confusion? {}", Common.isMemberInConfusion(member));
+        log.info("Is Member in confusion? {}", member.isInConfusion());
     }
 
     private static void pp221To222() {

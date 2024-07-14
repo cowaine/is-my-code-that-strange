@@ -1,5 +1,6 @@
 package com.cowaine.corock.chapter10.game;
 
+import com.cowaine.corock.chapter10.common.StateType;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -15,6 +16,10 @@ public class Member {
 
     public boolean canAct() {
         return hitPoint > 0;
+    }
+
+    public boolean isInConfusion() {
+        return states.contains(StateType.CONFUSED);
     }
 
 }
