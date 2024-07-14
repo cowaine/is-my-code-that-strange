@@ -20,11 +20,12 @@ public class Book {
         // Book.pp226To227();
         // Book.pp228To229();
         // Book.p230();
+        // Book.p232();
 
         Magic magic = new Magic(20);
         Member member = new Member(100, 90, 50, new States());
 
-        log.info("Can you enchant? {}", magic.isMemberHpMoreThanZeroAndIsMemberCanActAndIsMemberMpMoreThanMagicCostMp(member));
+        log.info("Can you enchant? {}", magic.canEnchant(member));
     }
 
     private static void pp221To222() {
@@ -70,6 +71,14 @@ public class Book {
         }
         int tmp5 = tmp3 * tmp6;
         return tmp5;
+    }
+
+    private static void p232() {
+        Magic magic = new Magic(20);
+        Member member = new Member(100, 90, 50, new States());
+
+        log.info("Can you enchant? {}",
+                magic.isMemberHpMoreThanZeroAndIsMemberCanActAndIsMemberMpMoreThanMagicCostMp(member));
     }
 
 }
