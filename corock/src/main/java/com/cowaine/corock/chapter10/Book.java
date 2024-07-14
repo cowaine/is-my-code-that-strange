@@ -33,12 +33,12 @@ public class Book {
         // Book.pp233To234();
         // Book.pp247To249();
 
-        int brFee = 26_000;
-        int LRF = 100;
-        int dod = 18;
+        int basicRentalFee = 26_000;
+        int LATE_RENTAL_FEE_PER_DAY = 100;
+        int daysOverDue = 18;
 
         // 렌탈 요금 총액 = 기본 요금 + 연체료 * 연체 일
-        int trFee = brFee + LRF * dod;
+        int trFee = basicRentalFee + LATE_RENTAL_FEE_PER_DAY * daysOverDue;
         log.info("렌탈 요금 총액: {}", trFee);
     }
 
