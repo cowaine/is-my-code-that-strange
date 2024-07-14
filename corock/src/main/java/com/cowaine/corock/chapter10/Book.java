@@ -3,7 +3,6 @@ package com.cowaine.corock.chapter10;
 import com.cowaine.corock.chapter10.amount.SalesCommissionRate;
 import com.cowaine.corock.chapter10.amount.SalesPrice;
 import com.cowaine.corock.chapter10.amount.ServiceUsageFee;
-import com.cowaine.corock.chapter10.common.Common;
 import com.cowaine.corock.chapter10.common.StateType;
 import com.cowaine.corock.chapter10.game.Accessory;
 import com.cowaine.corock.chapter10.game.Armor;
@@ -32,9 +31,14 @@ public class Book {
         // Book.p232();
         // Book.pp232To233();
         // Book.pp233To234();
+        // Book.pp247To249();
 
-        Member member = new Member(999, 500, 200, new States(List.of(StateType.CONFUSED)));
-        log.info("Is Member in confusion? {}", member.isInConfusion());
+        int brFee = 26_000;
+        int LRF = 100;
+        int dod = 18;
+
+        int trFee = brFee + LRF * dod;
+        log.info("렌탈 요금 총액: {}", trFee);
     }
 
     private static void pp221To222() {
@@ -101,6 +105,11 @@ public class Book {
         Order order = new Order(new OrderId(), new Items(), new GiftPoint(0));
         int count = order.itemCount();
         log.info("Order count: {}, and gift point: {}", count, order.getGiftPoint());
+    }
+
+    private static void pp247To249() {
+        Member member = new Member(999, 500, 200, new States(List.of(StateType.CONFUSED)));
+        log.info("Is Member in confusion? {}", member.isInConfusion());
     }
 
 }
