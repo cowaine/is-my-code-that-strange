@@ -3,6 +3,8 @@ package com.cowaine.corock.chapter10;
 import com.cowaine.corock.chapter10.amount.SalesCommissionRate;
 import com.cowaine.corock.chapter10.amount.SalesPrice;
 import com.cowaine.corock.chapter10.amount.ServiceUsageFee;
+import com.cowaine.corock.chapter10.common.Common;
+import com.cowaine.corock.chapter10.common.StateType;
 import com.cowaine.corock.chapter10.game.Accessory;
 import com.cowaine.corock.chapter10.game.Armor;
 import com.cowaine.corock.chapter10.game.CorrectedMaxHitPoint;
@@ -16,6 +18,9 @@ import com.cowaine.corock.chapter10.order.Order;
 import com.cowaine.corock.chapter10.order.OrderId;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Collections;
+import java.util.List;
+
 @Slf4j
 public class Book {
 
@@ -27,6 +32,9 @@ public class Book {
         // Book.p232();
         // Book.pp232To233();
         // Book.pp233To234();
+
+        Member member = new Member(999, 500, 200, new States(List.of(StateType.CONFUSED)));
+        log.info("Is Member in confusion? {}", Common.isMemberInConfusion(member));
     }
 
     private static void pp221To222() {
@@ -36,7 +44,7 @@ public class Book {
     }
 
     private static void pp226To227() {
-        Member member = new Member(100, 85, 70, new States());
+        Member member = new Member(100, 85, 70, new States(Collections.emptyList()));
         Accessory accessory = new Accessory();
 
         int maxHitPoint = member.getMaxHitPoint() + accessory.maxHitPointIncrements();
@@ -76,7 +84,7 @@ public class Book {
 
     private static void p232() {
         Magic magic = new Magic(20);
-        Member member = new Member(100, 90, 50, new States());
+        Member member = new Member(100, 90, 50, new States(Collections.emptyList()));
 
         log.info("Can you enchant? {}",
                 magic.isMemberHpMoreThanZeroAndIsMemberCanActAndIsMemberMpMoreThanMagicCostMp(member));
@@ -84,7 +92,7 @@ public class Book {
 
     private static void pp232To233() {
         Magic magic = new Magic(20);
-        Member member = new Member(100, 90, 50, new States());
+        Member member = new Member(100, 90, 50, new States(Collections.emptyList()));
 
         log.info("Can you enchant? {}", magic.canEnchant(member));
     }
