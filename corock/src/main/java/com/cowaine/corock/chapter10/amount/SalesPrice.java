@@ -1,10 +1,12 @@
 package com.cowaine.corock.chapter10.amount;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
+@Getter
 public class SalesPrice {
 
-    final int amount;
+    private final int amount;
 
 }
