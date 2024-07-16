@@ -25,15 +25,18 @@ import java.util.List;
 public class Book {
 
     public static void main(String[] args) {
-        // Book.pp221To222();
-        // Book.pp226To227();
-        // Book.pp228To229();
-        // Book.p230();
-        // Book.p232();
-        // Book.pp232To233();
-        // Book.pp233To234();
-        // Book.pp247To249();
+        Book.pp221To222();
+        Book.pp226To227();
+        Book.pp228To229();
+        Book.p230();
+        Book.p232();
+        Book.pp232To233();
+        Book.pp233To234();
+        Book.pp247To249();
+        Book.pp249To250();
+    }
 
+    private static void pp249To250() {
         RentalFee rentalFee = new RentalFee(26_000, 18);
         log.info("렌탈 요금 총액: {}", rentalFee.getTotalRentalFee());
     }
