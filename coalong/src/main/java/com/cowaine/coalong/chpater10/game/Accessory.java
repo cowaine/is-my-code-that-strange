@@ -1,6 +1,6 @@
-package com.cowaine.coalong.chapter05.game;
+package com.cowaine.coalong.chpater10.game;
 
-public class Armor {
+public class Accessory {
     public int maxHitPointIncrements() {
         return 10;
     }
