@@ -11,8 +11,8 @@ import java.util.Collections;
 public class Book {
 
     public static void main(String[] args) {
-        // Book.pp252To253();
-        // Book.pp254To256();
+        Book.pp252To253();
+        Book.pp254To256();
     }
 
     private static void pp252To253() {
