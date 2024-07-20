@@ -1,7 +1,10 @@
 package com.cowaine.coalong.chapter05.game;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Getter
 public class Armor {
-    public int maxHitPointIncrements() {
-        return 10;
-    }
+    private final int maxHitPoint;
 }

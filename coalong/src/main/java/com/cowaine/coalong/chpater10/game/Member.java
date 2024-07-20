@@ -7,5 +7,4 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public class Member {
     private final int maxHitPoint;
-
 }
