@@ -13,7 +13,7 @@ public class Example {
     }
 
     static void tenDotThree() {
-        Member member = new Member(100);
+        Member member = new Member(1000, 10, 1, 100);
         Accessory accessory = new Accessory();
         Armor armor = new Armor(10);
 
