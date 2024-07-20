@@ -9,12 +9,16 @@ public class Order {
     private GiftPoint giftPoint;
 
     int itemCount() {
-        int count = items.getCount();
+        return items.getCount();
+    }
 
-        // 주문 상품수가 10 이상일 때, 기프트 포인트를 100만큼 추가
-        if (10 <= count) {
+    boolean shouldAddGiftPoint() {
+        return 10 <= itemCount();
+    }
+
+    void tryAddGiftPoint() {
+        if (shouldAddGiftPoint()) {
             giftPoint = giftPoint.add(new GiftPoint(100));
         }
-        return count;
     }
 }
