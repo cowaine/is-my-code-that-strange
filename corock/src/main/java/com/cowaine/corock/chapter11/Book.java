@@ -2,12 +2,10 @@ package com.cowaine.corock.chapter11;
 
 import com.cowaine.corock.chapter11.game.Face;
 import com.cowaine.corock.chapter11.game.Member;
-import com.cowaine.corock.chapter11.game.StateType;
 import com.cowaine.corock.chapter11.game.States;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Collections;
-import java.util.List;
 
 @Slf4j
 public class Book {
