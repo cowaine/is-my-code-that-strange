@@ -7,9 +7,9 @@ import lombok.RequiredArgsConstructor;
 public class Member {
     private final States states;
 
-    boolean canAct() {
-        // 행동 불능 사양이 변경되는 경우
-        // 다음 로직을 변경합니다.
+    // 고통받는 상태일 때 true 를 리턴
+    boolean isPainful() {
+        // 이후 사양 변경으로 표정 변화를 일으키는 상태를 추가할 경우 이 메서드에 로직을 추가합니다.
         if (states.contains(StateType.sleeping) || states.contains(StateType.paralyzed) ||
                 states.contains(StateType.confused) || states.contains(StateType.stone) || states.contains(StateType.dead)) {
             return false;

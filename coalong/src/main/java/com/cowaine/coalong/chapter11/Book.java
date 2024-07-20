@@ -14,7 +14,7 @@ public class Book {
         Member member = new Member(new States(List.of(StateType.poison)));
         Face face = new Face();
         // 중독, 마비 상태에서 멤버의 표정을 변화시킴.
-        if (member.canAct()) {
+        if (member.isPainful()) {
             face.changeToPainful();
         }
     }
