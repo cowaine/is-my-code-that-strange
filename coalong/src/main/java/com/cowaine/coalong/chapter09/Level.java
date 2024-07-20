@@ -22,4 +22,8 @@ public class Level {
         if (value < MAX) return new Level(value + 1);
         return this;
     }
+
+    public int getValue() {
+        return this.value;
+    }
 }
