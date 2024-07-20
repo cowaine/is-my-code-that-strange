@@ -21,7 +21,7 @@ public class SavingAccount implements Account {
     //정적 팩토리 메서드
     public static SavingAccount createAccount(final Money initMoney, final Customer customer) {
         SavingAccount account = new SavingAccount(initMoney, customer.getName());
-        customer.assignAccount(account); //생성된 계좌 고객에게 할당
+        customer.addAccount(account); //생성된 계좌 고객에게 할당
         return account;
     }
 
