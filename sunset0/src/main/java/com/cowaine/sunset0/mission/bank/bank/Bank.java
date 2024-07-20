@@ -1,5 +1,6 @@
 package com.cowaine.sunset0.mission.bank.bank;
 
+import com.cowaine.sunset0.mission.bank.account.Account;
 import com.cowaine.sunset0.mission.bank.customer.Customer;
 import com.cowaine.sunset0.mission.bank.account.Money;
 import com.cowaine.sunset0.mission.bank.account.SavingAccount;
@@ -8,9 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bank {
-    private final List<SavingAccount> accounts;
-    private static float INTEREST_RATE = 0.03f;
-
+    private final List<Account> accounts;
 
     private Bank() {
         this.accounts = new ArrayList<>();
@@ -22,16 +21,16 @@ public class Bank {
     }
 
 
-    public List<SavingAccount> getAccounts() {
+    public List<Account> getAccounts() {
         return accounts;
     }
 
-    public SavingAccount openAccount(final Customer customer, final Money initMoney) {
-        return SavingAccount.createAccount(initMoney, INTEREST_RATE, customer);
+    public Account openAccount(final Customer customer, final Money initMoney) {
+        return SavingAccount.createAccount(initMoney, customer);
     }
 
     public void payInterestOnAllAccounts() {
-        for (SavingAccount account : accounts) {
+        for (Account account : accounts) {
             account.payInterest();
         }
     }
