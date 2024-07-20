@@ -14,9 +14,7 @@ public class Book {
 
     public static void main(String[] args) {
         // Book.pp252To253();
-
-        Member member = new Member(new States(Collections.emptyList()));
-        log.info("Can act? {}", member.canAct());
+        // Book.pp254To256();
     }
 
     private static void pp252To253() {
@@ -27,6 +25,11 @@ public class Book {
         if (member.isPainful()) {
             face.changeToPainful();
         }
+    }
+
+    private static void pp254To256() {
+        Member member = new Member(new States(Collections.emptyList()));
+        log.info("Can act? {}", member.canAct());
     }
 
 }
