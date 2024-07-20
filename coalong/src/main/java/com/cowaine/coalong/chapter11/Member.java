@@ -7,12 +7,12 @@ import lombok.RequiredArgsConstructor;
 public class Member {
     private final States states;
 
-    // 힘든 상태일 때 true 를 리턴
-    // 중독, 마비 상태일 때 true 를 리턴
-    boolean isPainful() {
-        if (states.contains(StateType.poison) || states.contains(StateType.paralyzed) || states.contains(StateType.fear)) {
-            return true;
+    // 수면, 마비, 혼란, 석화, 사망 이외의 상황에서 행동 가능
+    boolean isNotSleepingAndIsNotParalyzedAndIsNotConfusedAndIsNotStoneAndIsNotDead() {
+        if (states.contains(StateType.sleeping) || states.contains(StateType.paralyzed) ||
+                states.contains(StateType.confused) || states.contains(StateType.stone) || states.contains(StateType.dead)) {
+            return false;
         }
-        return false;
+        return true;
     }
 }
