@@ -7,6 +7,6 @@ public class CorrectedMaxHitPoint {
 
     public CorrectedMaxHitPoint(final OriginalMaxHitPoint originalMaxHitPoint, final Accessory accessory,
                                 final Armor armor) {
-        this.value = originalMaxHitPoint.getValue() + accessory.maxHitPointIncrements() + armor.maxHitPointIncrements();
+        this.value = originalMaxHitPoint.getValue() + accessory.maxHitPointIncrements() + armor.getMaxHitPoint();
     }
 }

@@ -7,8 +7,9 @@ import lombok.RequiredArgsConstructor;
 public class Member {
     private final States states;
 
-    // 수면, 마비, 혼란, 석화, 사망 이외의 상황에서 행동 가능
-    boolean isNotSleepingAndIsNotParalyzedAndIsNotConfusedAndIsNotStoneAndIsNotDead() {
+    boolean canAct() {
+        // 행동 불능 사양이 변경되는 경우
+        // 다음 로직을 변경합니다.
         if (states.contains(StateType.sleeping) || states.contains(StateType.paralyzed) ||
                 states.contains(StateType.confused) || states.contains(StateType.stone) || states.contains(StateType.dead)) {
             return false;
