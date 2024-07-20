@@ -1,4 +1,4 @@
-package com.cowaine.coalong.chpater10;
+package com.cowaine.coalong.chapter10;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

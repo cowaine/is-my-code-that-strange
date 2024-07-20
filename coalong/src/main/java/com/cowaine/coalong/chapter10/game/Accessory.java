@@ -1,4 +1,4 @@
-package com.cowaine.coalong.chpater10.game;
+package com.cowaine.coalong.chapter10.game;
 
 public class Accessory {
     public int maxHitPointIncrements() {

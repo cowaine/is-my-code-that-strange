@@ -1,4 +1,4 @@
-package com.cowaine.coalong.chpater10;
+package com.cowaine.coalong.chapter10;
 
 public class ServiceUsageFee {
     final int amount;

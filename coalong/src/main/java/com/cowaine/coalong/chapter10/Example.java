@@ -1,8 +1,8 @@
-package com.cowaine.coalong.chpater10;
+package com.cowaine.coalong.chapter10;
 
 import com.cowaine.coalong.chapter05.game.Armor;
-import com.cowaine.coalong.chpater10.game.Accessory;
-import com.cowaine.coalong.chpater10.game.Member;
+import com.cowaine.coalong.chapter10.game.Accessory;
+import com.cowaine.coalong.chapter10.game.Member;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

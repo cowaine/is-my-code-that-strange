@@ -1,4 +1,4 @@
-package com.cowaine.coalong.chpater10.game;
+package com.cowaine.coalong.chapter10.game;
 
 import com.cowaine.coalong.chapter05.game.Armor;
 

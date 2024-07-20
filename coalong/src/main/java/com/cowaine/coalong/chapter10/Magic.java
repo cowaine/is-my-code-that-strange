@@ -1,7 +1,7 @@
-package com.cowaine.coalong.chpater10;
+package com.cowaine.coalong.chapter10;
 
 
-import com.cowaine.coalong.chpater10.game.Member;
+import com.cowaine.coalong.chapter10.game.Member;
 
 public class Magic {
     boolean canEnchant(final Member member) {

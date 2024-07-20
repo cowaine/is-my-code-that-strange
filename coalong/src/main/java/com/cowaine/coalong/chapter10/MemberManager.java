@@ -1,4 +1,4 @@
-package com.cowaine.coalong.chpater10;
+package com.cowaine.coalong.chapter10;
 
 public class MemberManager {
     // 멤버의 히트포인트 추출하기
