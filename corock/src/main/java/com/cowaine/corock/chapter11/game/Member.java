@@ -17,7 +17,7 @@ public class Member {
         return false;
     }
 
-    public boolean isNotSleepingAndIsNotParalyzedAndIsNotConfusedAndIsNotStoneAndIsNotDead() {
+    public boolean canAct() {
         if (states.contains(StateType.POISON) || states.contains(StateType.PARALYZED)
                 || states.contains(StateType.FEAR) || states.contains(StateType.STONE)
                 || states.contains(StateType.DEAD)) {
