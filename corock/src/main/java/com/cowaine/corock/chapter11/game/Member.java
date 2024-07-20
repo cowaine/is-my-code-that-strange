@@ -17,4 +17,13 @@ public class Member {
         return false;
     }
 
+    public boolean isNotSleepingAndIsNotParalyzedAndIsNotConfusedAndIsNotStoneAndIsNotDead() {
+        if (states.contains(StateType.POISON) || states.contains(StateType.PARALYZED)
+                || states.contains(StateType.FEAR) || states.contains(StateType.STONE)
+                || states.contains(StateType.DEAD)) {
+            return true;
+        }
+        return false;
+    }
+
 }
