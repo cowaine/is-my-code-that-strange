@@ -6,9 +6,9 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor(staticName = "of")
 @Getter
-public class Money {
+public class Dept {
 
-    public static final Money EMPTY = null;
+    public static final Dept EMPTY = null;
     private final BigDecimal value;
     private final Currency currency;
 }
