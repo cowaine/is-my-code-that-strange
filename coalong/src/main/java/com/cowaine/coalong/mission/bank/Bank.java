@@ -12,10 +12,12 @@ public class Bank {
         return openNewAccount;
     }
 
-    public void payInterestOnAllAccounts() {
+    void payInterestOnAllAccounts() {
         for (Account account : accounts) {
             account.payInterest();
         }
     }
+
+
 
 }
