@@ -6,10 +6,17 @@ import lombok.extern.slf4j.Slf4j;
 public class MultipleApplication {
 
     public static void main(String[] args) {
-        Operand integer = Operand.create(5);
-        log.info("result = {}", Operand.create(10).multiply(integer));
-        log.info("result = {}", integer.multiply(Operand.create(30)));
-        log.info("result = {}", Operand.create(100).multiply(integer));
+        Operand five = Operand.create(5);
+        LocationAwareOperand right = LocationAwareOperand.create(five, Position.RIGHT);
+
+        Operand ten = Operand.create(10);
+        log.info("result = {}", LocationAwareOperand.create(ten, Position.LEFT).multiply(right));
+
+        Operand thirty = Operand.create(30);
+        log.info("result = {}", LocationAwareOperand.create(thirty, Position.LEFT).multiply(right));
+
+        Operand oneHundred = Operand.create(100);
+        log.info("result = {}", LocationAwareOperand.create(oneHundred, Position.LEFT).multiply(right));
     }
 
 }
