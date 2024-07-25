@@ -4,5 +4,5 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class DeliveryCharge {
-    private final int deliveryPrice;
+    private final DeliveryPrice deliveryPrice;
 }
