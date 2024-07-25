@@ -8,6 +8,10 @@ import lombok.extern.slf4j.Slf4j;
 public class Book {
 
     public static void main(String[] args) {
+        // Book.pp268To270();
+    }
+
+    private static void pp268To270() {
         Price productPrice = new Price(39_800);
         Price otherPrice = new Price(29_800);
 
