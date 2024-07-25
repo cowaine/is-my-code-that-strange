@@ -7,6 +7,6 @@ import lombok.ToString;
 @ToString
 public class DeliveryCharge {
 
-    private final int amount;
+    private final Price price;
 
 }

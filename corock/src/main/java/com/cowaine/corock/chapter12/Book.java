@@ -11,9 +11,9 @@ public class Book {
         Price productPrice = new Price(39_800);
         Price otherPrice = new Price(29_800);
 
-        int price = productPrice.add(otherPrice);                   // 상품 가격 합계
-        int discountedPrice = calcDiscountedPrice(price);           // 할인 금액
-        int deliveryPrice = calcDeliveryPrice(discountedPrice);     // 배송비
+        Price price = productPrice.add(otherPrice);// 상품 가격 합계
+        Price discountedPrice = calcDiscountedPrice(price);// 할인 금액
+        Price deliveryPrice = calcDeliveryPrice(discountedPrice);// 배송비
 
         log.info("deliveryPrice: {}", deliveryPrice);
 
@@ -22,12 +22,12 @@ public class Book {
         log.info("deliveryCharge: {}", deliveryCharge);
     }
 
-    private static int calcDiscountedPrice(int price) {
-        return (int) (price * 0.1);
+    private static Price calcDiscountedPrice(Price price) {
+        return new Price((int) (price.getAmount() * 0.1));
     }
 
-    private static int calcDeliveryPrice(int discountedPrice) {
-        return discountedPrice - 2_500;
+    private static Price calcDeliveryPrice(Price discountedPrice) {
+        return new Price(discountedPrice.getAmount() - 2_500);
     }
 
 }
