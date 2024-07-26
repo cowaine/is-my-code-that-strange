@@ -18,4 +18,6 @@ class User {
 
     // 생략, 이 외에도 수많은 인스턴스 변수를 갖습니다.
 
+    String corporationNumber;   // 법인 등록번호
+
 }
