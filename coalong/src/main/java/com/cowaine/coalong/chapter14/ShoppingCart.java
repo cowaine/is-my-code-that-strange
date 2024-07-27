@@ -8,7 +8,7 @@ import java.util.List;
 @Getter
 // 장바구니
 public class ShoppingCart {
-    final List<Product> products;
+    private final List<Product> products;
 
     ShoppingCart() {
         products = new ArrayList<Product>();
