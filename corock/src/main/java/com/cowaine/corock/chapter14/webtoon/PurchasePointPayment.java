@@ -13,16 +13,15 @@ class PurchasePointPayment {
         if (!customer.isEnabled()) {
             throw new IllegalArgumentException("유효하지 않은 계정입니다.");
         }
-        this.customerId = customer.getId();
-
         if (!comic.isEnabled()) {
             throw new IllegalArgumentException("현재 구매할 수 없는 만화입니다.");
         }
-        this.comicId = comic.getId();
-
         if (customer.getPossessionPoint().getAmount() < comic.getCurrentPurchasePoint().getAmount()) {
             throw new RuntimeException("보유하고 있는 포인트가 부족합니다.");
         }
+
+        this.customerId = customer.getId();
+        this.comicId = comic.getId();
         this.consumptionPoint = comic.getCurrentPurchasePoint();
         this.paymentDatetime = LocalDateTime.now();
     }
