@@ -18,6 +18,11 @@ public class ShoppingCart {
         this.products = products;
     }
 
+    /**
+     * 장바구니에 상품 추가하기
+     * @param product 상품
+     * @return 상품이 추가된 장바구니
+     */
     ShoppingCart add(final Product product) {
         final List<Product> adding = new ArrayList<>(products);
         adding.add(product);
