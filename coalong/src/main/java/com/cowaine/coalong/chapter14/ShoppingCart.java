@@ -23,4 +23,15 @@ public class ShoppingCart {
         adding.add(product);
         return new ShoppingCart(adding);
     }
+
+    /**
+     * @return 상품 합계 금액
+     */
+    int totalPrice() {
+        int amount = 0;
+        for (Product each : products) {
+            amount += each.getPrice();
+        }
+        return amount;
+    }
 }
