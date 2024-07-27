@@ -11,21 +11,19 @@ public class PurchasePointPayment {
 
     PurchasePointPayment(final Customer customer, final Comic comic) {
         if (customer.isEnabled()) {
-            customerId = customer.getId();
-            if (comic.isEnabled()) {
-                comicId = comic.getId();
-                if (comic.getCurrentPurchasePoint().getAmount() <= customer.getPossessionPoint().getAmount()) {
-                    consumptionPoint = comic.getCurrentPurchasePoint();
-                    paymentDateTime = LocalDateTime.now();
-                } else {
-                    throw new RuntimeException("보유하고 있는 포인트가 부족합니다.");
-                }
-            } else {
-                throw new IllegalArgumentException("현재 구매할 수 없는 만화입니다.");
-            }
-        }
-        else {
             throw new IllegalArgumentException("유효하지 않은 계정입니다.");
+        }
+        customerId = customer.getId();
+        if (comic.isEnabled()) {
+            comicId = comic.getId();
+            if (comic.getCurrentPurchasePoint().getAmount() <= customer.getPossessionPoint().getAmount()) {
+                consumptionPoint = comic.getCurrentPurchasePoint();
+                paymentDateTime = LocalDateTime.now();
+            } else {
+                throw new RuntimeException("보유하고 있는 포인트가 부족합니다.");
+            }
+        } else {
+            throw new IllegalArgumentException("현재 구매할 수 없는 만화입니다.");
         }
     }
 }
