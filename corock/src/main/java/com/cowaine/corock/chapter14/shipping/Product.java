@@ -7,10 +7,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class Product {
 
-    final int id;
-    final String name;
+    private final int id;
+    private final String name;
 
     @Getter
-    final int price;
+    private final int price;
 
 }

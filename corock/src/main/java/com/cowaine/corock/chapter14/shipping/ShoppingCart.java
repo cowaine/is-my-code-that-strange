@@ -1,12 +1,15 @@
 package com.cowaine.corock.chapter14.shipping;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
 // 장바구니
+@Getter
 class ShoppingCart {
 
-    final List<Product> products;
+    private final List<Product> products;
 
     ShoppingCart() {
         this.products = new ArrayList<>();
