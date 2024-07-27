@@ -18,11 +18,11 @@ public class DeliveryManager {
         int totalPrice = 0;
         for (Product each : products) {
             totalPrice += each.getPrice();
-        }
-        if (totalPrice < 20000) {
-            charge = 5000;
-        } else {
-            charge = 0;
+            if (totalPrice < 20000) {
+                charge = 5000;
+            } else {
+                charge = 0;
+            }
         }
         return charge;
     }

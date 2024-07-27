@@ -1,12 +1,10 @@
 package com.cowaine.coalong.chapter14;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@RequiredArgsConstructor
 @Getter
 // 장바구니
 public class ShoppingCart {
