@@ -5,7 +5,9 @@ import lombok.Getter;
 import java.util.ArrayList;
 import java.util.List;
 
-// 장바구니
+/**
+ * 장바구니
+ */
 @Getter
 public class ShoppingCart {
 
@@ -19,12 +21,21 @@ public class ShoppingCart {
         this.products = products;
     }
 
+    /**
+     * 장바구니에 상품을 추가한다.
+     *
+     * @param product 상품
+     * @return 상품이 추가된 장바구니
+     */
     ShoppingCart add(final Product product) {
         final List<Product> adding = new ArrayList<>(products);
         adding.add(product);
         return new ShoppingCart(adding);
     }
 
+    /**
+     * @return 상품 합계 금액
+     */
     public int totalPrice() {
         int amount = 0;
         for (Product each : products) {
