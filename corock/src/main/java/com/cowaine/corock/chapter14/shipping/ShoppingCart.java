@@ -7,7 +7,7 @@ import java.util.List;
 
 // 장바구니
 @Getter
-class ShoppingCart {
+public class ShoppingCart {
 
     private final List<Product> products;
 
@@ -23,6 +23,14 @@ class ShoppingCart {
         final List<Product> adding = new ArrayList<>(products);
         adding.add(product);
         return new ShoppingCart(adding);
+    }
+
+    public int totalPrice() {
+        int amount = 0;
+        for (Product each : products) {
+            amount += each.getPrice();
+        }
+        return amount;
     }
 
 }
