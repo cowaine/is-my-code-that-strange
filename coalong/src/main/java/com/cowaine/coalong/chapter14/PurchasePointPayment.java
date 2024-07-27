@@ -16,7 +16,7 @@ public class PurchasePointPayment {
         if (!comic.isEnabled()) {
             throw new IllegalArgumentException("현재 구매할 수 없는 만화입니다.");
         }
-        if (customer.getPossessionPoint().getAmount() < comic.getCurrentPurchasePoint().getAmount()) {
+        if (customer.isShortOfPoint(comic)) {
             throw new RuntimeException("보유하고 있는 포인트가 부족합니다.");
         }
         customerId = customer.getId();
