@@ -5,12 +5,15 @@ import lombok.Getter;
 @Getter
 public class DeliveryCharge {
     private final int amount;
+    private static final int CHARGE_FREE_THRESHOLD = 20000;
+    private static final int PAY_CHARGE = 5000;
+    private static final int CHARGE_FREE = 0;
 
     DeliveryCharge(final ShoppingCart shoppingCart) {
-        if (shoppingCart.totalPrice() < 20000) {
-            amount = 5000;
+        if (shoppingCart.totalPrice() < CHARGE_FREE_THRESHOLD) {
+            amount = PAY_CHARGE;
         } else {
-            amount = 0;
+            amount = CHARGE_FREE;
         }
     }
 }
