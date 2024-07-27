@@ -12,4 +12,8 @@ public class Customer {
     public boolean isEnabled() {
         return false;
     }
+
+    public boolean isDisabled() {
+        return true;
+    }
 }

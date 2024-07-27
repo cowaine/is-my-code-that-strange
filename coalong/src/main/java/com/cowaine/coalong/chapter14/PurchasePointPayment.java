@@ -10,7 +10,7 @@ public class PurchasePointPayment {
     final LocalDateTime paymentDateTime;  // 구매 일자
 
     PurchasePointPayment(final Customer customer, final Comic comic) {
-        if (customer.isEnabled()) {
+        if (customer.isDisabled()) {
             throw new IllegalArgumentException("유효하지 않은 계정입니다.");
         }
         if (!comic.isEnabled()) {
