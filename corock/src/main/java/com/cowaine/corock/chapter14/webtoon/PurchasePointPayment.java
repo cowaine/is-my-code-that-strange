@@ -10,10 +10,10 @@ class PurchasePointPayment {
     final LocalDateTime paymentDatetime;        // 구매 일자
 
     PurchasePointPayment(final Customer customer, final Comic comic) {
-        if (!customer.isEnabled()) {
+        if (!customer.isDisabled()) {
             throw new IllegalArgumentException("유효하지 않은 계정입니다.");
         }
-        if (!comic.isEnabled()) {
+        if (!comic.isDisabled()) {
             throw new IllegalArgumentException("현재 구매할 수 없는 만화입니다.");
         }
         if (customer.getPossessionPoint().getAmount() < comic.getCurrentPurchasePoint().getAmount()) {

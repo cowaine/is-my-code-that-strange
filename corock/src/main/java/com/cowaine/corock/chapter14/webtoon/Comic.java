@@ -14,4 +14,8 @@ public class Comic {
         return false;
     }
 
+    public boolean isDisabled() {
+        return !this.isEnabled();
+    }
+
 }
