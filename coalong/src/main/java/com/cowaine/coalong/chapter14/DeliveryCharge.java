@@ -1,5 +1,8 @@
 package com.cowaine.coalong.chapter14;
 
+import lombok.Getter;
+
+@Getter
 public class DeliveryCharge {
     private final int amount;
 
