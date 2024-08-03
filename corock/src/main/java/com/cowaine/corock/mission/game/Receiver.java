@@ -5,10 +5,9 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class Receiver extends Thread {
-
     private final DataInputStream in;
 
-    Receiver(Socket socket) throws IOException {
+    public Receiver(Socket socket) throws IOException {
         this.in = new DataInputStream(socket.getInputStream());
     }
 
@@ -25,9 +24,18 @@ public class Receiver extends Thread {
 
     private void receiveMessage() {
         try {
-            System.out.println(in.readUTF());
+            String response = in.readUTF();
+            if (isQuitTheGame(response)) {
+                this.interrupt();
+                System.exit(0);
+            }
+            System.out.print(response);
         } catch (IOException e) {
+            System.err.println(e.getMessage());
         }
     }
 
+    private boolean isQuitTheGame(String response) {
+        return response.equals("quit");
+    }
 }
