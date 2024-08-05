@@ -21,6 +21,7 @@ public class GameClient {
 
             sender.start();
             receiver.start();
+
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {

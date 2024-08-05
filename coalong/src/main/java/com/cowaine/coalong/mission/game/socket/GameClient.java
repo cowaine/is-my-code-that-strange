@@ -1,4 +1,4 @@
-package com.cowaine.coalong.mission.game;
+package com.cowaine.coalong.mission.game.socket;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,6 +21,7 @@ public class GameClient {
 
             sender.start();
             receiver.start();
+
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {

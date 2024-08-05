@@ -1,4 +1,4 @@
-package com.cowaine.coalong.mission.game;
+package com.cowaine.coalong.mission.game.socket;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
