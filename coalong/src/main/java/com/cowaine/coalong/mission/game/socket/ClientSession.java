@@ -19,8 +19,8 @@ public class ClientSession extends Thread {
     private final Map<String, DataOutputStream> clientOutMap;
     private final DataInputStream in;
     private final DataOutputStream out;
-    private final GameService gameService;
     private String id;
+    private final GameService gameService;
 
     ClientSession(Socket socket, Map<String, DataOutputStream> clientOutMap, GameService gameService) throws IOException {
         this.socket = socket;
@@ -40,6 +40,7 @@ public class ClientSession extends Thread {
         try {
             this.id = in.readUTF();
             joinGame(this);
+            OutputView.printLandingPage(this.out);
         } catch (IOException cause) {
             // TODO: 최초 통신(아이디 받기)이 실패하는 경우
         }
@@ -48,8 +49,7 @@ public class ClientSession extends Thread {
     private void connect() {
         try {
             while (isConnect()) {
-                String request = in.readUTF();
-                OutputView.print(this.out, request);
+                String command = in.readUTF();
             }
         } catch (IOException cause) {
             // TODO: 채팅 중 연결이 끊기는 경우
