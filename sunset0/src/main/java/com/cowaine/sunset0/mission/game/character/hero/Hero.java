@@ -9,8 +9,8 @@ import java.util.Random;
 
 public class Hero {
 
-    private static int INITIAL_HEALTH = 100;
-    private static int INITIAL_ATTACK_POWER = 10;
+    private static final int INITIAL_HEALTH = 100;
+    private static final int INITIAL_ATTACK_POWER = 10;
 
     private String id;
     private Level level;
@@ -40,7 +40,7 @@ public class Hero {
 
 
     public boolean isAlive() {
-        return !this.health.isLeft();
+        return this.health.isLeft();
     }
 
 }
