@@ -13,6 +13,7 @@ public class Dragon implements Monster {
     private static int INITIAL_HEALTH = 100;
     private static int INITIAL_ATTACK_POWER = 10;
     private static int BREATH_DAMAGE = 15;
+    private static int BREATH_POSSIBLE_PERCENT = 10;
 
     private Level level;
     private Health health;
@@ -35,8 +36,7 @@ public class Dragon implements Monster {
         int damage = random.nextInt(attackPower.get()) + 1;
         hero.takeDamage(new Health(damage));
 
-        //10%의 확률로 브레스를 뿜습니다.
-        if (is10Percent()) {
+        if (isBreathCase()) {
             hero.takeDamage(new Health(BREATH_DAMAGE));
         }
     }
@@ -45,8 +45,8 @@ public class Dragon implements Monster {
      * 0~9 사이의 랜덤 숫자값이 0에 해당하면 10% 확률에 속한다고 간주합니다.
      * @return 10%의 확률에 속하는지에 관한 여부
      */
-    private boolean is10Percent() {
-        return random.nextInt(10) == 0;
+    private boolean isBreathCase() {
+        return random.nextInt(100) < BREATH_POSSIBLE_PERCENT;
     }
 
     @Override
