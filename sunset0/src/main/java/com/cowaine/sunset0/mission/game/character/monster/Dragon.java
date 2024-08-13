@@ -5,6 +5,7 @@ import com.cowaine.sunset0.mission.game.character.Health;
 import com.cowaine.sunset0.mission.game.character.Level;
 import com.cowaine.sunset0.mission.game.character.hero.Hero;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class Dragon implements Monster {
@@ -16,7 +17,7 @@ public class Dragon implements Monster {
     private Level level;
     private Health health;
     private AttackPower attackPower;
-    private Random random = new Random();
+    private Random random = new SecureRandom();
 
     private Dragon() {
         this.level = Level.THREE;
