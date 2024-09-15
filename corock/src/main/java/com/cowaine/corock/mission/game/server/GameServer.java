@@ -1,4 +1,4 @@
-package com.cowaine.corock.mission.game;
+package com.cowaine.corock.mission.game.server;
 
 import com.cowaine.corock.mission.game.domain.message.GameMessage;
 
@@ -10,26 +10,25 @@ import java.net.Socket;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-import static com.cowaine.corock.mission.game.Config.PORT;
-
 /**
  * A GameServer is a server that uses the game.
  */
-public class GameServer {
+class GameServer {
+
     /**
      * This method creates a client session and starts the game.
      *
      * @throws IOException - When the game client fails to connect
      */
-    public void start() throws IOException {
-        try (ServerSocket serverSocket = new ServerSocket(Integer.parseInt(PORT.getValue()));
+    void start() throws IOException {
+        try (ServerSocket serverSocket = new ServerSocket(ServerConfig.port());
              BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out))) {
 
             writer.write(GameMessage.getServerThreadInfo(getTime())
-                + "Starting the last kingdom server version 1.0.0" + System.lineSeparator());
+                    + "Starting the last kingdom server version 1.0.0" + System.lineSeparator());
             writer.write(GameMessage.getServerThreadInfo(getTime())
-                + "Server is listening on port " + serverSocket.getLocalPort()
-                + System.lineSeparator());
+                    + "Server is listening on port " + serverSocket.getLocalPort()
+                    + System.lineSeparator());
             writer.flush();
 
             while (true) {
@@ -50,4 +49,5 @@ public class GameServer {
     private String getTime() {
         return LocalTime.now().format(DateTimeFormatter.ofPattern("hh:mm:ss"));
     }
+
 }

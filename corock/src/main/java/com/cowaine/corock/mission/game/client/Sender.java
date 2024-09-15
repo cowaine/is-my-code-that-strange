@@ -1,4 +1,4 @@
-package com.cowaine.corock.mission.game;
+package com.cowaine.corock.mission.game.client;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -6,11 +6,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
-public class Sender extends Thread {
+class Sender extends Thread {
+
     private final DataOutputStream out;
     private final String userId;
 
-    public Sender(Socket socket, String userId) throws IOException {
+    Sender(Socket socket, String userId) throws IOException {
         this.out = new DataOutputStream(socket.getOutputStream());
         this.userId = userId;
     }
@@ -42,4 +43,5 @@ public class Sender extends Thread {
             }
         }
     }
+
 }

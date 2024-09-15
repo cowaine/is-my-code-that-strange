@@ -1,4 +1,4 @@
-package com.cowaine.corock.mission.game;
+package com.cowaine.corock.mission.game.server;
 
 import com.cowaine.corock.mission.game.domain.command.Command;
 import com.cowaine.corock.mission.game.domain.command.CommandResolver;
@@ -14,18 +14,20 @@ import java.net.Socket;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Getter
 public class ClientSession extends Thread implements Sendable {
-    private final ConcurrentHashMap<String, DataOutputStream> clientOutMap = new ConcurrentHashMap<>();
 
+    private final Map<String, DataOutputStream> clientOutMap;
     private final Socket socket;
     private final DataInputStream in;
     private final DataOutputStream out;
     private String userId;
 
     public ClientSession(Socket socket) throws IOException {
+        this.clientOutMap = new ConcurrentHashMap<>();
         this.socket = socket;
         this.in = new DataInputStream(socket.getInputStream());
         this.out = new DataOutputStream(socket.getOutputStream());
