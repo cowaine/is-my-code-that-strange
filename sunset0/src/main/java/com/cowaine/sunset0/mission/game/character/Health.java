@@ -1,6 +1,9 @@
 package com.cowaine.sunset0.mission.game.character;
 
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
 public class Health {
 
     private int amount;
@@ -17,15 +20,6 @@ public class Health {
         }
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
 
     public Health decline(Health reduction) {
         return new Health(this.amount - reduction.amount);
@@ -33,6 +27,10 @@ public class Health {
 
     public boolean isLeft() {
         return this.amount > 0;
+    }
+
+    protected boolean canEqual(final Object other) {
+        return other instanceof Health;
     }
 
 }
