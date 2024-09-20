@@ -1,4 +1,4 @@
-package com.cowaine.corock.mission.game;
+package com.cowaine.coalong.mission.game.socket;
 
 import lombok.RequiredArgsConstructor;
 
