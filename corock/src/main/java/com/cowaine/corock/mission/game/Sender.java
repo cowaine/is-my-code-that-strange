@@ -10,11 +10,11 @@ import java.util.Scanner;
 @Getter
 public class Sender extends Thread {
 
-    private final String id;
+    private final String clientId;
     private final DataOutputStream out;
 
-    Sender(Socket socket, String id) throws IOException {
-        this.id = id;
+    Sender(Socket socket, String clientId) throws IOException {
+        this.clientId = clientId;
         this.out = new DataOutputStream(socket.getOutputStream());
     }
 
@@ -47,7 +47,7 @@ public class Sender extends Thread {
 
     private void initialize() throws IOException {
         if (isSendable()) {
-            this.out.writeUTF(id);
+            this.out.writeUTF(clientId);
         }
     }
 
@@ -58,7 +58,7 @@ public class Sender extends Thread {
     private void sendMessage() throws IOException {
         try (Scanner scanner = new Scanner(System.in)) {
             while (isSendable()) {
-                this.out.writeUTF("[" + id + "] " + scanner.nextLine());
+                this.out.writeUTF("[" + clientId + "] " + scanner.nextLine());
             }
         }
     }
