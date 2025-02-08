@@ -15,20 +15,19 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 @Getter
 public class ClientSession extends Thread implements Sendable {
 
-    private final Map<String, DataOutputStream> clientOutMap;
     private final Socket socket;
+    private final Map<String, DataOutputStream> clientOutMap;
     private final DataInputStream in;
     private final DataOutputStream out;
     private String userId;
 
-    public ClientSession(Socket socket) throws IOException {
-        this.clientOutMap = new ConcurrentHashMap<>();
+    public ClientSession(Socket socket, Map<String, DataOutputStream> clientOutMap) throws IOException {
         this.socket = socket;
+        this.clientOutMap = clientOutMap;
         this.in = new DataInputStream(socket.getInputStream());
         this.out = new DataOutputStream(socket.getOutputStream());
     }
@@ -41,6 +40,8 @@ public class ClientSession extends Thread implements Sendable {
         } catch (InterruptedException ie) {
             System.err.println("InterruptedException: " + ie);
             Thread.currentThread().interrupt();
+        } finally {
+            disconnect();
         }
     }
 
@@ -90,7 +91,7 @@ public class ClientSession extends Thread implements Sendable {
         return this.in != null;
     }
 
-    private void disconnect() {
+    public void disconnect() {
         leaveGame(this);
     }
 

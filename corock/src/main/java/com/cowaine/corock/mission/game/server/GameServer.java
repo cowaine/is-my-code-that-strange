@@ -3,17 +3,22 @@ package com.cowaine.corock.mission.game.server;
 import com.cowaine.corock.mission.game.domain.message.GameMessage;
 
 import java.io.BufferedWriter;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * A GameServer is a server that uses the game.
  */
 class GameServer {
+
+    private final Map<String, DataOutputStream> clientOutMap = new ConcurrentHashMap<>();
 
     /**
      * This method creates a client session and starts the game.
@@ -34,7 +39,7 @@ class GameServer {
             while (true) {
                 try {
                     Socket socket = serverSocket.accept();
-                    ClientSession client = new ClientSession(socket);
+                    ClientSession client = new ClientSession(socket, clientOutMap);
                     client.start();
                     if (client.getIn() == null) {
                         break;
