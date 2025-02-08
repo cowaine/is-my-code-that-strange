@@ -1,10 +1,10 @@
-package com.cowaine.corock.mission.game;
+package com.cowaine.corock.mission.game.client;
 
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-public class Receiver extends Thread {
+class Receiver extends Thread {
 
     private final DataInputStream in;
 
@@ -25,9 +25,19 @@ public class Receiver extends Thread {
 
     private void receiveMessage() {
         try {
-            System.out.println(in.readUTF());
+            String response = in.readUTF();
+            if (isQuitTheGame(response)) {
+                this.interrupt();
+                System.exit(0);
+            }
+            System.out.print(response);
         } catch (IOException e) {
+            System.err.println(e.getMessage());
         }
+    }
+
+    private boolean isQuitTheGame(String response) {
+        return response.equals("quit");
     }
 
 }
