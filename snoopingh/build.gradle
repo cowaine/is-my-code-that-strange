@@ -1,0 +1,12 @@
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation("org.junit.platform:junit-platform-launcher:1.5.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.5.2")
+}
+
+test {
+    useJUnitPlatform()
+}
